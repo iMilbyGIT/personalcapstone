@@ -1,0 +1,39 @@
+﻿@model IEnumerable<AdamPersonalCapstone.Models.CustomerDevicesJTable>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Customer.ApplicationId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Device.Brand)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Customer.ApplicationId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Device.Brand)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.CustomerDevicesJTableId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.CustomerDevicesJTableId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.CustomerDevicesJTableId })
+        </td>
+    </tr>
+}
+
+</table>

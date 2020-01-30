@@ -1,0 +1,40 @@
+﻿@model AdamPersonalCapstone.Models.CustomerDevicesJTable
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>CustomerDevicesJTable</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Customer.ApplicationId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Customer.ApplicationId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Device.Brand)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Device.Brand)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

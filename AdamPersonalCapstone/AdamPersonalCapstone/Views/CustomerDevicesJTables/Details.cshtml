@@ -1,0 +1,34 @@
+﻿@model AdamPersonalCapstone.Models.CustomerDevicesJTable
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>CustomerDevicesJTable</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Customer.ApplicationId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Customer.ApplicationId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Device.Brand)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Device.Brand)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CustomerDevicesJTableId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

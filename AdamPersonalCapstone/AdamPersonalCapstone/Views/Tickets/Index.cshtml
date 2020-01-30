@@ -1,0 +1,69 @@
+﻿@model IEnumerable<AdamPersonalCapstone.Models.Ticket>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Customer.ApplicationId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Device.Brand)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Employee.ApplicationId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MessageSent)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MessageReceived)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Subject)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Message)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Customer.ApplicationId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Device.Brand)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Employee.ApplicationId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MessageSent)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MessageReceived)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Subject)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Message)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.TicketId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.TicketId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.TicketId })
+        </td>
+    </tr>
+}
+
+</table>

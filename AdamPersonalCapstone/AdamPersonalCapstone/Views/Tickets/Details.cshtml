@@ -1,0 +1,74 @@
+﻿@model AdamPersonalCapstone.Models.Ticket
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Ticket</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Customer.ApplicationId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Customer.ApplicationId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Device.Brand)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Device.Brand)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Employee.ApplicationId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employee.ApplicationId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MessageSent)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MessageSent)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MessageReceived)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MessageReceived)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Subject)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Subject)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Message)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Message)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.TicketId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
