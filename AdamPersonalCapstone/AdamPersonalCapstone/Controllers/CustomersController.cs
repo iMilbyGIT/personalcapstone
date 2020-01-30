@@ -34,8 +34,8 @@ namespace AdamPersonalCapstone.Controllers
         // GET: Owners/Details/5
         public ActionResult Details(int id)
         {
-            var customerDetails = db.Customers.Where(a => a.CustomerId == id).FirstOrDefault();
-            return View(customerDetails);
+            var customer = db.Customers.Where(a => a.CustomerId == id).FirstOrDefault();
+            return View(customer);
         }
 
         // GET: Owners/Create

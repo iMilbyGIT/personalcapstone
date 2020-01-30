@@ -40,7 +40,7 @@
                 @if (User.IsInRole("Customer"))
                 {
             <ul class="nav navbar-nav">
-                <li>@Html.ActionLink("Home", "Index", "Customers")</li>
+                @*<li>@Html.ActionLink("Home", "Index", "Customers")</li>*@
                 <li>@Html.ActionLink("Details", "Details", "Customers")</li>
                 <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                 <li>@Html.ActionLink("Map", "Map", "Customers")</li>
