@@ -188,12 +188,17 @@
     <Compile Include="Migrations\202001301350280_SeedingDatabaseWithCellPhoneInfo.Designer.cs">
       <DependentUpon>202001301350280_SeedingDatabaseWithCellPhoneInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202001301659065_newnew.cs" />
+    <Compile Include="Migrations\202001301659065_newnew.Designer.cs">
+      <DependentUpon>202001301659065_newnew.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\CustomerDevicesJTable.cs" />
     <Compile Include="Models\Device.cs" />
     <Compile Include="Models\Employee.cs" />
+    <Compile Include="Models\GeoCode.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Owner.cs" />
@@ -223,6 +228,7 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\mapscript.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -258,18 +264,18 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Customer\Create.cshtml" />
-    <Content Include="Views\Employee\Create.cshtml" />
-    <Content Include="Views\Customer\Delete.cshtml" />
-    <Content Include="Views\Customer\Details.cshtml" />
-    <Content Include="Views\Customer\Edit.cshtml" />
-    <Content Include="Views\Employee\Delete.cshtml" />
-    <Content Include="Views\Employee\Details.cshtml" />
-    <Content Include="Views\Employee\Edit.cshtml" />
-    <Content Include="Views\Owner\Create.cshtml" />
-    <Content Include="Views\Owner\Delete.cshtml" />
-    <Content Include="Views\Owner\Details.cshtml" />
-    <Content Include="Views\Owner\Edit.cshtml" />
+    <Content Include="Views\Customers\Create.cshtml" />
+    <Content Include="Views\Employees\Create.cshtml" />
+    <Content Include="Views\Customers\Delete.cshtml" />
+    <Content Include="Views\Customers\Details.cshtml" />
+    <Content Include="Views\Customers\Edit.cshtml" />
+    <Content Include="Views\Employees\Delete.cshtml" />
+    <Content Include="Views\Employees\Details.cshtml" />
+    <Content Include="Views\Employees\Edit.cshtml" />
+    <Content Include="Views\Owners\Create.cshtml" />
+    <Content Include="Views\Owners\Delete.cshtml" />
+    <Content Include="Views\Owners\Details.cshtml" />
+    <Content Include="Views\Owners\Edit.cshtml" />
     <Content Include="Views\usercontroller\Index.cshtml" />
     <Content Include="Views\Devices\Create.cshtml" />
     <Content Include="Views\Devices\Delete.cshtml" />
@@ -286,9 +292,11 @@
     <Content Include="Views\CustomerDevicesJTables\Details.cshtml" />
     <Content Include="Views\CustomerDevicesJTables\Edit.cshtml" />
     <Content Include="Views\CustomerDevicesJTables\Index.cshtml" />
+    <Content Include="Views\Customers\Map.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Maps\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -309,6 +317,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202001301350280_SeedingDatabaseWithCellPhoneInfo.resx">
       <DependentUpon>202001301350280_SeedingDatabaseWithCellPhoneInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001301659065_newnew.resx">
+      <DependentUpon>202001301659065_newnew.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

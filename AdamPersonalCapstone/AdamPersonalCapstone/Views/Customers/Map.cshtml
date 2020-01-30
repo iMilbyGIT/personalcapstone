@@ -1,0 +1,43 @@
+﻿@{
+    ViewBag.Title = "Map";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Neighborhood Nerd Map</title>
+    <meta name="viewport" content="initial-scale=1.0" />
+    <meta charset="utf-8" />
+
+    <link rel="stylesheet" href="~/Content/Site.css" />
+</head>
+<body>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col">
+                <h1 class="display-4">Neighborhood Nerd Map</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div id="map"></div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var map;
+        function createMap() {
+            var options = {
+                center: { lat: 43.0389, lng: -87.9065 },
+                zoom: 10
+            };
+            map = new google.maps.Map(document.getElementById('map'), options);
+
+        }
+    </script>
+
+    <!--Google Maps Scripts-->
+    @*<script src=@ViewBag.MapUrl async defer></script>*@
+    <script src="https://maps.googleapis.com/maps/api/js?&key=AIzaSyDu8Y7yU-IfXMIpPzuOuBGarlgjidNxuwQ&callback=createMap" async defer></script>
+</body>
+</html>

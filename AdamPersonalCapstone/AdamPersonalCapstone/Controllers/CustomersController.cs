@@ -21,7 +21,11 @@ namespace AdamPersonalCapstone.Controllers
             var customer = db.Customers.Where(c => c.ApplicationId == userId).FirstOrDefault();
             return View(customer);
         }
-
+        public ActionResult Map()
+        {
+            ViewBag.MapUrl = PrivateKeys.googleMap;
+            return View();
+        }
         public ActionResult CreateOwnedDeviceList()
         {
             return View();

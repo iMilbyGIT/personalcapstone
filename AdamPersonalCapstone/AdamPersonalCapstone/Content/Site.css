@@ -22,3 +22,9 @@ select,
 textarea {
     max-width: 280px;
 }
+
+#map{
+    border: 2px solid #333;
+    height: 500px;
+    width: 400px;
+}
