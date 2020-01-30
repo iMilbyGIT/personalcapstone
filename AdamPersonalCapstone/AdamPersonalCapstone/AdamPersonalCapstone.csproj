@@ -198,7 +198,6 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Owner.cs" />
     <Compile Include="Models\Ticket.cs" />
-    <Compile Include="PrivateKeys1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
