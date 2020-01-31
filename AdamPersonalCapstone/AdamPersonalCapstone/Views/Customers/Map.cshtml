@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Neighborhood Nerd Map</title>
+    <title>NeighborNerd Map</title>
     <meta name="viewport" content="initial-scale=1.0" />
     <meta charset="utf-8" />
 
@@ -35,7 +35,19 @@
             // Create marker 
             var marker = new google.maps.Marker({
               map: map,
-              position: new google.maps.LatLng(43.0389, -87.9065),
+              position: new google.maps.LatLng(43.0851705, -87.8913918),
+              title: 'Nerd - Adam'
+            });
+
+            var marker2 = new google.maps.Marker({
+              map: map,
+              position: new google.maps.LatLng(43.03978, -87.9118359),
+              title: 'Nerd - Adam'
+            });
+
+            var marker3 = new google.maps.Marker({
+              map: map,
+              position: new google.maps.LatLng(42.962356, -88.060349),
               title: 'Nerd - Adam'
             });
 
@@ -46,7 +58,18 @@
               fillColor: '#AA0000'
             });
             circle.bindTo('center', marker, 'position');        
-
+            var circle = new google.maps.Circle({
+              map: map,
+              radius: 1609,    // 1 miles in meters
+              fillColor: '#AA0000'
+            });
+            circle.bindTo('center', marker2, 'position'); 
+            var circle = new google.maps.Circle({
+              map: map,
+              radius: 1609,    // 1 miles in meters
+              fillColor: '#AA0000'
+            });
+            circle.bindTo('center', marker3, 'position'); 
         }
     </script>
 
