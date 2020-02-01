@@ -26,7 +26,7 @@ namespace AdamPersonalCapstone.Controllers
             ViewBag.MapUrl = PrivateKeys.googleMap;
             return View();
         }
-        public ActionResult CreateOwnedDeviceList()
+        public ActionResult OwnedDevices()
         {
             return View();
         }
