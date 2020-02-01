@@ -2,11 +2,12 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
-    <h1>Neighborhood Nerd LLC</h1>
-    <p class="lead">Your "nerdy" handyman for the modern day.</p>
-    @*<p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>*@
-</div>
+    <div class="jumbotron">
+        <h1>Neighborhood Nerd LLC</h1>
+        <p class="lead">Your "nerdy" handyman for the modern day.</p>
+        <p><a href="www.neighborhoodnerd.biz" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+        @{ Html.RenderPartial("_StarRating"); }
+    </div>
 
 <div class="row">
     <div class="col-md-4">

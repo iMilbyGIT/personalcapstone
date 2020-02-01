@@ -16,7 +16,7 @@ namespace AdamPersonalCapstone.Controllers
         public TwiMLResult Index(SmsRequest request)
         {
             var response = new MessagingResponse();
-            response.Message("Hello World");
+            response.Message("I need assistance. Please let me know when you're available.");
             return TwiML(response);
         }
     }

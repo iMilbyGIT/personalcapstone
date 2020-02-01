@@ -1,0 +1,9 @@
+﻿@model AdamPersonalCapstone.Models.Review
+
+<h2>Please Rate Your Nerd! **if this loads then this partial view is working correctly.</h2>
+<br />
+<button class="button1" type="button" onclick="location.href='@Url.Action("eRate", "Rating", new { rating = 1, id = Model.ApplicationId})'"></button>
+<button class="button2" type="button" onclick="location.href='@Url.Action("eRate", "Rating", new { rating = 2, id = Model.ApplicationId})'"></button>
+<button class="button3" type="button" onclick="location.href='@Url.Action("eRate", "Rating", new { rating = 3, id = Model.ApplicationId})'"></button>
+<button class="button4" type="button" onclick="location.href='@Url.Action("eRate", "Rating", new { rating = 4, id = Model.ApplicationId})'"></button>
+<button class="button5" type="button" onclick="location.href='@Url.Action("eRate", "Rating", new { rating = 5, id = Model.ApplicationId})'"></button>

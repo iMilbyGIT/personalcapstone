@@ -28,3 +28,48 @@ textarea {
     height: 500px;
     width: 400px;
 }
+
+.button1 {
+    background: url(Images/new1.png) no-repeat;
+    background-position: center;
+    cursor: pointer;
+    width: 100px;
+    height: 50px;
+    border: none;
+}
+
+.button2 {
+    background: url(Images/new2.png) no-repeat;
+    background-position: center;
+    cursor: pointer;
+    width: 100px;
+    height: 50px;
+    border: none;
+}
+
+.button3 {
+    background: url(Images/new3.png) no-repeat;
+    background-position: center;
+    cursor: pointer;
+    width: 100px;
+    height: 50px;
+    border: none;
+}
+
+.button4 {
+    background: url(Images/new4.png) no-repeat;
+    background-position: center;
+    cursor: pointer;
+    width: 100px;
+    height: 50px;
+    border: none;
+}
+
+.button5 {
+    background: url(Images/new5.png) no-repeat;
+    background-position: center;
+    cursor: pointer;
+    width: 100px;
+    height: 50px;
+    border: none;
+}

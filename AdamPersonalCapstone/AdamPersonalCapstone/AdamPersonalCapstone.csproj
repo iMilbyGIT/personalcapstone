@@ -194,9 +194,10 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\OwnersController.cs" />
+    <Compile Include="Controllers\RatingController.cs" />
     <Compile Include="Controllers\TicketsController.cs" />
     <Compile Include="Controllers\TokenController.cs" />
-    <Compile Include="Controllers\TwilioController.cs" />
+    <Compile Include="Controllers\SMSController.cs" />
     <Compile Include="Controllers\usercontroller.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -214,6 +215,10 @@
     <Compile Include="Migrations\202001301659065_newnew.Designer.cs">
       <DependentUpon>202001301659065_newnew.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202002011627147_newnewnewwww.cs" />
+    <Compile Include="Migrations\202002011627147_newnewnewwww.Designer.cs">
+      <DependentUpon>202002011627147_newnewnewwww.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -224,6 +229,7 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Owner.cs" />
+    <Compile Include="Models\Review.cs" />
     <Compile Include="Models\Ticket.cs" />
     <Compile Include="PrivateKeys.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -315,6 +321,8 @@
     <Content Include="Views\CustomerDevicesJTables\Edit.cshtml" />
     <Content Include="Views\CustomerDevicesJTables\Index.cshtml" />
     <Content Include="Views\Customers\Map.cshtml" />
+    <Content Include="Views\Shared\_StarRating.cshtml" />
+    <Content Include="Views\Rating\_Rating.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -344,6 +352,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202001301659065_newnew.resx">
       <DependentUpon>202001301659065_newnew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002011627147_newnewnewwww.resx">
+      <DependentUpon>202002011627147_newnewnewwww.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -26,5 +26,12 @@ namespace AdamPersonalCapstone.Models
 
         [Display(Name = "Phone Number")]
         public int PhoneNumber { get; set; }
+
+        public int rateCount { get; set; }
+
+        [Display(Name = "Rating")]
+        public double averageRate { get; set; }
+
+        public double employeeRating{ get; set; }
     }
 }
