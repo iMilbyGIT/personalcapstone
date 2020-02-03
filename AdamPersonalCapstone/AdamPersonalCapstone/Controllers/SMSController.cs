@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AdamPersonalCapstone.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,12 +12,11 @@ namespace AdamPersonalCapstone.Controllers
 {
     public class SMSController : TwilioController
     {
-
-        [HttpPost]
-        public TwiMLResult Index(SmsRequest request)
+        private ApplicationDbContext db = new ApplicationDbContext();
+        public async System.Threading.Tasks.Task<TwiMLResult> Index(SmsRequest incomingMessage)
         {
             var response = new MessagingResponse();
-            response.Message("I need assistance. Please let me know when you're available.");
+            response.Message("User Says:" + incomingMessage.Body);
             return TwiML(response);
         }
     }

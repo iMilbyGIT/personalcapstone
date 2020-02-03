@@ -7,6 +7,8 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using Twilio;
+using Twilio.Rest.Api.V2010.Account;
 
 namespace AdamPersonalCapstone.Controllers
 {
@@ -29,6 +31,19 @@ namespace AdamPersonalCapstone.Controllers
         public ActionResult OwnedDevices()
         {
             return View();
+        }
+        public ActionResult MapClick()
+        {
+            const string accountSid = PrivateKeys.twilioAccountSid;
+            const string authToken = PrivateKeys.twilioToken;
+            TwilioClient.Init(accountSid, authToken);
+            var message = MessageResource.Create(
+            body: "There is a local customer in need of Nerd assistance! Please log into NeighborNerd to address the request.",
+            from: new Twilio.Types.PhoneNumber("+17867890420"),
+            to: new Twilio.Types.PhoneNumber("+16084210953")
+            );
+            Console.WriteLine(message.Sid);
+            return RedirectToAction("Index", "SMS");
         }
 
         // GET: Owners/Details/5

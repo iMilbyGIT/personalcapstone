@@ -43,6 +43,9 @@ namespace AdamPersonalCapstone.Models
         
         [Display(Name = "Owned Devices")]
         public List<Device> OwnedDevices { get; set; }
+
+        [Display(Name = "Personal Devices")]
+        public List<string> PersonalDevices { get; set; }
     }
 
 }
