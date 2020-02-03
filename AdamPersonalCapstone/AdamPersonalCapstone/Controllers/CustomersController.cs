@@ -32,7 +32,8 @@ namespace AdamPersonalCapstone.Controllers
         {
             return View();
         }
-        public ActionResult MapClick()
+        [ChildActionOnly]
+        public void MapClick()
         {
             const string accountSid = PrivateKeys.twilioAccountSid;
             const string authToken = PrivateKeys.twilioToken;
@@ -43,7 +44,6 @@ namespace AdamPersonalCapstone.Controllers
             to: new Twilio.Types.PhoneNumber("+16084210953")
             );
             Console.WriteLine(message.Sid);
-            return RedirectToAction("Index", "SMS");
         }
 
         // GET: Owners/Details/5

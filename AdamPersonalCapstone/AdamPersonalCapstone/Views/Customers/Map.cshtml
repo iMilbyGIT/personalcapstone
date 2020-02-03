@@ -32,34 +32,25 @@
                 zoom: 10
             };
             map = new google.maps.Map(document.getElementById('map'), options);
+
             // Create marker 
             var marker = new google.maps.Marker({
               map: map,
               position: new google.maps.LatLng(43.0851705, -87.8913918),
               title: 'Nerd - Adam'
             });
-            @*google.maps.event.addDomListener(window, 'load', initialize);
-            google.maps.event.addListener(marker, 'click', function () {
-                @Url.Action("MapClick", "Customers");
-            })*@
 
             var marker2 = new google.maps.Marker({
               map: map,
               position: new google.maps.LatLng(43.03978, -87.9118359),
               title: 'Nerd - Adam'
             });
-            google.maps.event.addDomListener(marker2, 'click', function () {
-                @Html.Action("MapClick", "Customers")
-            })
 
             var marker3 = new google.maps.Marker({
               map: map,
               position: new google.maps.LatLng(42.962356, -88.060349),
               title: 'Nerd - Adam'
             });
-            @*google.maps.event.addDomListener(marker3, 'click', function () {
-                @Url.Action("MapClick", "Customers");
-            })*@
 
             // Add circle overlay and bind to marker
             var circle = new google.maps.Circle({
@@ -80,10 +71,22 @@
               fillColor: '#AA0000'
             });
             circle.bindTo('center', marker3, 'position'); 
+
+            google.maps.event.addDomListener(marker, 'click', function () {
+                @Html.Action("MapClick", "Customers")
+            })
+
+            @*google.maps.event.addDomListener(marker2, 'click', function () {
+                @Html.Action("MapClick", "Customers")
+            })*@
+
+            @*google.maps.event.addDomListener(marker3, 'click', function () {
+                @Url.Action("MapClick", "Customers");
+            })*@
+
         }
     </script>
 
-    <!--Google Maps Script-->
     <script src=@ViewBag.MapUrl async defer></script>
 </body>
 </html>
