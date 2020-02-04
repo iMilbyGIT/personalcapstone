@@ -23,24 +23,23 @@
                 @if (User.IsInRole("Owner"))
                 {
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Owners")</li>
+                    <li>@Html.ActionLink("Pending Tickets", "Index", "Tickets")</li>
+                    <li>@Html.ActionLink("Completed Tickets", "Index", "Tickets")</li>
                     <li>@Html.ActionLink("Employee Details", "Details", "Employees")</li>
                     <li>@Html.ActionLink("Customer Details", "Details", "Customers")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Owners")</li>
                 </ul>
                 }
                 @if (User.IsInRole("Employee"))
                 {
                     <ul class="nav navbar-nav">
-                        <li>@Html.ActionLink("Home", "Index", "Employees")</li>
-                        <li>@Html.ActionLink("Details", "Details", "Employees")</li>
-                        <li>@Html.ActionLink("Contact", "Contact", "Employees")</li>
+                        <li>@Html.ActionLink("Pending Tickets", "Index", "Tickets")</li>
+                        <li>@Html.ActionLink("Completed Tickets", "Index", "Tickets")</li>
                     </ul>
                 }
                 @if (User.IsInRole("Customer"))
                 {
             <ul class="nav navbar-nav">
-                <li>@Html.ActionLink("Create Ticket", "Create", "Customers")</li>
+                <li>@Html.ActionLink("Create Ticket", "Create", "Tickets")</li>
                 <li>@Html.ActionLink("Device List - Owned Devices", "Index", "Devices")</li>
                 <li>@Html.ActionLink("Pay For Service", "Payment", "Customers")</li>
                 <li>@Html.ActionLink("Map", "Map", "Customers")</li>

@@ -43,6 +43,16 @@ namespace AdamPersonalCapstone.Controllers
         {
             return View();
         }
+        //public bool IsDeviceOwned(Customer customer, Device device)
+        //{
+        //    string currentUserId = User.Identity.GetUserId();
+        //    var currentCust = db.Customers.Where(c => c.ApplicationId == currentUserId).SingleOrDefault();
+        //    if (device.Owned == true)
+        //    {
+        //        db.Entry(customer.OwnedDevices).State = EntityState.Added;
+        //    }
+        //    return customer;
+        //}
         [ChildActionOnly]
         public void MapClick()
         {

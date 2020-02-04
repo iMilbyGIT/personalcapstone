@@ -87,27 +87,27 @@ namespace AdamPersonalCapstone.Controllers
                     var customer = db.Customers.Where(u => u.ApplicationId == user.Id).FirstOrDefault();
                     if (customer == null)
                     {
-                        return RedirectToAction("Create", "Customer"); //If they never made profile after registration then they must go to "Create", "Customer"
+                        return RedirectToAction("Create", "Customers"); //If they never made profile after registration then they must go to "Create", "Customer"
                     }
-                    return RedirectToAction("Index", "Customer"); //Redirect to there profile "Index", "Customer"
+                    return RedirectToAction("Index", "Home"); //Redirect to there profile "Index", "Customer"
                 }
                 else if (roles.Contains("Employee"))
                 {
                     var musician = db.Employees.Where(u => u.ApplicationId == user.Id).FirstOrDefault();
                     if (musician == null)
                     {
-                        return RedirectToAction("Create", "Employee"); //If they never made profile after registration then they must go to "Create", "Musician"
+                        return RedirectToAction("Create", "Employees"); //If they never made profile after registration then they must go to "Create", "Musician"
                     }
-                    return RedirectToAction("Index", "Employee"); //Redirect to there profile "Index", "Musicians"
+                    return RedirectToAction("Index", "Home"); //Redirect to there profile "Index", "Employees"
                 }
                 else if (roles.Contains("Owner"))
                 {
                     var musician = db.Owners.Where(u => u.ApplicationId == user.Id).FirstOrDefault();
                     if (musician == null)
                     {
-                        return RedirectToAction("Create", "Owner"); //If they never made profile after registration then they must go to "Create", "Musician"
+                        return RedirectToAction("Create", "Owners"); //If they never made profile after registration then they must go to "Create", "Musician"
                     }
-                    return RedirectToAction("Index", "Owner"); //Redirect to there profile "Index", "Musicians"
+                    return RedirectToAction("Index", "Home"); //Redirect to there profile "Index", "Owners"
                 }
                 return RedirectToLocal(returnUrl);
                 case SignInStatus.LockedOut:
@@ -196,8 +196,23 @@ namespace AdamPersonalCapstone.Controllers
                     // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");    
                     //Assign Role to user Here       
                     await this.UserManager.AddToRoleAsync(user.Id, model.UserRoles);
-                    //Ends Here     
-                    return RedirectToAction("Index", "Users");
+                    if (model.UserRoles.Equals("Customer"))
+                    {
+                        return RedirectToAction("Create", "Customers"); //
+                    }
+                    else if (model.UserRoles.Equals("Employee"))
+                    {
+                        return RedirectToAction("Create", "Musicians");
+                    }
+                    else if (model.UserRoles.Equals("Owner"))
+                    {
+                        return RedirectToAction("Create", "Owners");
+                    }
+                    else
+                    {
+                        return RedirectToAction("Index", "Home");
+                    }
+
                 }
                 ViewBag.Name = new SelectList(db.Roles.Where(u => !u.Name.Contains("Admin"))
                                           .ToList(), "Name", "Name");

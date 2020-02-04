@@ -43,7 +43,7 @@ namespace AdamPersonalCapstone.Controllers
         public ActionResult Create()
         {
             ViewBag.CustomerId = new SelectList(db.Customers, "CustomerId", "ApplicationId");
-            ViewBag.DeviceId = new SelectList(db.Devices, "DevicesId", "Brand");
+            ViewBag.DeviceId = new SelectList(db.Devices, "DevicesId", "Name");
             ViewBag.EmployeeId = new SelectList(db.Employees, "EmployeeId", "ApplicationId");
             return View();
         }
@@ -63,7 +63,7 @@ namespace AdamPersonalCapstone.Controllers
             }
 
             ViewBag.CustomerId = new SelectList(db.Customers, "CustomerId", "ApplicationId", ticket.CustomerId);
-            ViewBag.DeviceId = new SelectList(db.Devices, "DevicesId", "Brand", ticket.DeviceId);
+            ViewBag.DeviceId = new SelectList(db.Devices, "DevicesId", "Name", ticket.DeviceId);
             ViewBag.EmployeeId = new SelectList(db.Employees, "EmployeeId", "ApplicationId", ticket.EmployeeId);
             return View(ticket);
         }
