@@ -4,11 +4,11 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Build Your Device Profile</h2>
 
-<p>
+@*<p>
     @Html.ActionLink("Create New", "Create")
-</p>
+</p>*@
 <table class="table">
     <tr>
         <th>
@@ -16,6 +16,9 @@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Owned)
         </th>
         <th></th>
     </tr>
@@ -29,9 +32,12 @@
             @Html.DisplayFor(modelItem => item.Name)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.DevicesId }) |
+            @Html.CheckBoxFor(modelItem => item.Owned)
+        </td>
+        <td>
+            @*@Html.ActionLink("Edit", "Edit", new { id=item.DevicesId }) |
             @Html.ActionLink("Details", "Details", new { id=item.DevicesId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.DevicesId })
+            @Html.ActionLink("Delete", "Delete", new { id=item.DevicesId })*@
         </td>
     </tr>
 }

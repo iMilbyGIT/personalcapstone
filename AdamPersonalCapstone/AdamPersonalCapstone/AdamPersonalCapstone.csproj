@@ -244,6 +244,18 @@
     <Compile Include="Migrations\202002041618439_integratedpaypalfully.designer.cs">
       <DependentUpon>202002041618439_integratedpaypalfully.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202002041649175_seedingdevicedatabase.cs" />
+    <Compile Include="Migrations\202002041649175_seedingdevicedatabase.designer.cs">
+      <DependentUpon>202002041649175_seedingdevicedatabase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002041707403_tryingtoseeddevicesdatabaseagain.cs" />
+    <Compile Include="Migrations\202002041707403_tryingtoseeddevicesdatabaseagain.designer.cs">
+      <DependentUpon>202002041707403_tryingtoseeddevicesdatabaseagain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002041723252_addedboolforowned.cs" />
+    <Compile Include="Migrations\202002041723252_addedboolforowned.designer.cs">
+      <DependentUpon>202002041723252_addedboolforowned.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -485,6 +497,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202002041618439_integratedpaypalfully.resx">
       <DependentUpon>202002041618439_integratedpaypalfully.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002041649175_seedingdevicedatabase.resx">
+      <DependentUpon>202002041649175_seedingdevicedatabase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002041707403_tryingtoseeddevicesdatabaseagain.resx">
+      <DependentUpon>202002041707403_tryingtoseeddevicesdatabaseagain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002041723252_addedboolforowned.resx">
+      <DependentUpon>202002041723252_addedboolforowned.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

@@ -16,5 +16,7 @@ namespace AdamPersonalCapstone.Models
         public string Brand { get; set; }
 
         public string Name { get; set; }
+
+        public bool Owned { get; set; }
     }
 }
