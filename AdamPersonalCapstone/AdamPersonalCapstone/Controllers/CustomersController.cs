@@ -23,10 +23,21 @@ namespace AdamPersonalCapstone.Controllers
             var customer = db.Customers.Where(c => c.ApplicationId == userId).FirstOrDefault();
             return View(customer);
         }
+        public ActionResult Payment()
+        {
+            ViewBag.PayPal = PrivateKeys.paypalURL;
+            return View();
+        }
         public ActionResult Map()
         {
             ViewBag.MapUrl = PrivateKeys.googleMap;
             return View();
+        }
+        public ActionResult CreateTicket()
+        {
+            var userID = User.Identity.GetUserId();
+            var customer = db.Customers.Where(c => c.ApplicationId == userID).FirstOrDefault();
+            return RedirectToAction("Create", "Ticket", customer);
         }
         public ActionResult OwnedDevices()
         {
@@ -62,6 +73,7 @@ namespace AdamPersonalCapstone.Controllers
 
         // POST: Owners/Create
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Create(Customer customer)
         {
             try
@@ -82,6 +94,7 @@ namespace AdamPersonalCapstone.Controllers
         }
 
         // GET: Owners/Edit/5
+        [Authorize(Roles = "Customer")]
         public ActionResult Edit(int id)
         {
             if (id == null)
@@ -98,6 +111,7 @@ namespace AdamPersonalCapstone.Controllers
 
         // POST: Owners/Edit/5
         [HttpPost]
+        [Authorize(Roles = "Customer")]
         public ActionResult Edit(Customer customer)
         {
             if (ModelState.IsValid)
@@ -112,6 +126,7 @@ namespace AdamPersonalCapstone.Controllers
         }
 
         // GET: Owners/Delete/5
+        [Authorize(Roles = "Customer")]
         public ActionResult Delete(int id)
         {
             if (id == null)
@@ -127,6 +142,7 @@ namespace AdamPersonalCapstone.Controllers
         }
 
         // POST: Owners/Delete/5
+        [Authorize(Roles = "Customer")]
         [HttpPost]
         public ActionResult Delete(int id, Customer customer)
         {

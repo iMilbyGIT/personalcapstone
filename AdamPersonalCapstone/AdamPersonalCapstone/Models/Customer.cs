@@ -46,6 +46,12 @@ namespace AdamPersonalCapstone.Models
 
         [Display(Name = "Personal Devices")]
         public List<string> PersonalDevices { get; set; }
+
+        public bool TicketPending { get; set; }
+
+        public bool TicketComplete { get; set; }
+
+        public decimal AccountBalance { get; set; }
     }
 
 }

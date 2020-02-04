@@ -80,6 +80,35 @@ namespace AdamPersonalCapstone.Controllers
             switch (result)
             {
                 case SignInStatus.Success:
+                var user = await UserManager.FindAsync(model.UserName, model.Password);
+                var roles = await UserManager.GetRolesAsync(user.Id);
+                if (roles.Contains("Customer"))
+                {
+                    var customer = db.Customers.Where(u => u.ApplicationId == user.Id).FirstOrDefault();
+                    if (customer == null)
+                    {
+                        return RedirectToAction("Create", "Customer"); //If they never made profile after registration then they must go to "Create", "Customer"
+                    }
+                    return RedirectToAction("Index", "Customer"); //Redirect to there profile "Index", "Customer"
+                }
+                else if (roles.Contains("Employee"))
+                {
+                    var musician = db.Employees.Where(u => u.ApplicationId == user.Id).FirstOrDefault();
+                    if (musician == null)
+                    {
+                        return RedirectToAction("Create", "Employee"); //If they never made profile after registration then they must go to "Create", "Musician"
+                    }
+                    return RedirectToAction("Index", "Employee"); //Redirect to there profile "Index", "Musicians"
+                }
+                else if (roles.Contains("Owner"))
+                {
+                    var musician = db.Owners.Where(u => u.ApplicationId == user.Id).FirstOrDefault();
+                    if (musician == null)
+                    {
+                        return RedirectToAction("Create", "Owner"); //If they never made profile after registration then they must go to "Create", "Musician"
+                    }
+                    return RedirectToAction("Index", "Owner"); //Redirect to there profile "Index", "Musicians"
+                }
                 return RedirectToLocal(returnUrl);
                 case SignInStatus.LockedOut:
                 return View("Lockout");

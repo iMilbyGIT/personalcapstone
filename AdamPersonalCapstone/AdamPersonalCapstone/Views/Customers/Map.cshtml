@@ -34,7 +34,7 @@
             map = new google.maps.Map(document.getElementById('map'), options);
 
             // Create marker 
-            var marker = new google.maps.Marker({
+            var marker1 = new google.maps.Marker({
               map: map,
               position: new google.maps.LatLng(43.0851705, -87.8913918),
               title: 'Nerd - Adam'
@@ -58,32 +58,31 @@
               radius: 2000,    // 1 mile = 1609 meters
               fillColor: '#AA0000'
             });
-            circle.bindTo('center', marker, 'position');        
+            circle.bindTo('center', marker1, 'position');        
             var circle = new google.maps.Circle({
               map: map,
-              radius: 2000,    // in meters
+              radius: 2000,
               fillColor: '#AA0000'
             });
             circle.bindTo('center', marker2, 'position'); 
             var circle = new google.maps.Circle({
               map: map,
-              radius: 2000,    // in meters
+              radius: 2000,
               fillColor: '#AA0000'
             });
             circle.bindTo('center', marker3, 'position'); 
 
-            google.maps.event.addDomListener(marker, 'click', function () {
+            google.maps.event.trigger(marker1, 'click', function () {
                 @Html.Action("MapClick", "Customers")
-            })
+            });
 
-            @*google.maps.event.addDomListener(marker2, 'click', function () {
+            @*google.maps.event.addListener(marker2, 'click', function () {
                 @Html.Action("MapClick", "Customers")
             })*@
 
             @*google.maps.event.addDomListener(marker3, 'click', function () {
                 @Url.Action("MapClick", "Customers");
             })*@
-
         }
     </script>
 

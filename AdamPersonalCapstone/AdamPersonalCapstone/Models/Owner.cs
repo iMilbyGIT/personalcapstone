@@ -26,5 +26,6 @@ namespace AdamPersonalCapstone.Models
 
         [Display(Name = "Phone Number")]
         public int PhoneNumber { get; set; }
+
     }
 }

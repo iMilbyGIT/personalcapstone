@@ -228,6 +228,22 @@
     <Compile Include="Migrations\202002011627147_newnewnewwww.Designer.cs">
       <DependentUpon>202002011627147_newnewnewwww.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202002041329190_newnenewnew.cs" />
+    <Compile Include="Migrations\202002041329190_newnenewnew.designer.cs">
+      <DependentUpon>202002041329190_newnenewnew.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002041353191_new.cs" />
+    <Compile Include="Migrations\202002041353191_new.designer.cs">
+      <DependentUpon>202002041353191_new.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002041456088_paymentaddition.cs" />
+    <Compile Include="Migrations\202002041456088_paymentaddition.designer.cs">
+      <DependentUpon>202002041456088_paymentaddition.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002041618439_integratedpaypalfully.cs" />
+    <Compile Include="Migrations\202002041618439_integratedpaypalfully.designer.cs">
+      <DependentUpon>202002041618439_integratedpaypalfully.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -245,17 +261,14 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\bootstrap-grid.css" />
-    <Content Include="Content\bootstrap-grid.min.css" />
-    <Content Include="Content\bootstrap-reboot.css" />
-    <Content Include="Content\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Scripts\bootstrap.bundle.js" />
-    <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\esm\popper-utils.js" />
@@ -267,16 +280,14 @@
     <Content Include="Scripts\esm\popper.js.map" />
     <Content Include="Scripts\esm\popper-utils.min.js.map" />
     <Content Include="Scripts\esm\popper-utils.js.map" />
-    <Content Include="Scripts\bootstrap.min.js.map" />
-    <Content Include="Scripts\bootstrap.js.map" />
-    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
-    <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Content\bootstrap.min.css.map" />
     <Content Include="Content\bootstrap.css.map" />
-    <Content Include="Content\bootstrap-reboot.min.css.map" />
-    <Content Include="Content\bootstrap-reboot.css.map" />
-    <Content Include="Content\bootstrap-grid.min.css.map" />
-    <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -436,6 +447,7 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Views\Customers\Payment.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -461,6 +473,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202002011627147_newnewnewwww.resx">
       <DependentUpon>202002011627147_newnewnewwww.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002041329190_newnenewnew.resx">
+      <DependentUpon>202002041329190_newnenewnew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002041353191_new.resx">
+      <DependentUpon>202002041353191_new.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002041456088_paymentaddition.resx">
+      <DependentUpon>202002041456088_paymentaddition.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002041618439_integratedpaypalfully.resx">
+      <DependentUpon>202002041618439_integratedpaypalfully.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

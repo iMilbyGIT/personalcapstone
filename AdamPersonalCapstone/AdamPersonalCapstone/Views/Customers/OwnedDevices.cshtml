@@ -7,7 +7,7 @@
 <h2>OwnedDevices</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create New Ticket", "Create", "Ticket")
 </p>
 <table class="table">
     <tr>
@@ -15,21 +15,20 @@
             @Html.DisplayNameFor(model => model.OwnedDevices)
         </th>
             <td>
-
+                @*@Html.CheckBoxFor(model => model.)*@
             </td>
         <th>
             @Html.DisplayNameFor(model => model.PersonalDevices)
         </th>
+            <td>
+
+            </td>
         <th></th>
     </tr>
 
 
     <tr>
-        @*<td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.CustomerId }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.CustomerId }) |*@
-            @*@Html.ActionLink("Details", "Details", new { id = item.CustomerId })*@
-
+        <td>
         </td>
     </tr>
 
