@@ -7,12 +7,37 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using AdamPersonalCapstone.Models;
+using Microsoft.AspNet.Identity;
 
 namespace AdamPersonalCapstone.Controllers
 {
     public class CustomerDevicesJTablesController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
+
+        public ActionResult AddDevice(int id)
+        {
+            var userId = User.Identity.GetUserId();
+            var customer = db.Customers.Where(c => c.ApplicationId == userId).FirstOrDefault();
+            CustomerDevicesJTable customerDevicesJTable = new CustomerDevicesJTable();
+            customerDevicesJTable.DevicesId = id;
+            customerDevicesJTable.CustomerId = customer.CustomerId;
+            db.CustomerDevices.Add(customerDevicesJTable);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult DeleteDevice(int id)
+        {
+            var userId = User.Identity.GetUserId();
+            var customer = db.Customers.Where(c => c.ApplicationId == userId).FirstOrDefault();
+            CustomerDevicesJTable customerDevicesJTable = new CustomerDevicesJTable();
+            customerDevicesJTable.DevicesId = id;
+            customerDevicesJTable.CustomerId = customer.CustomerId;
+            db.CustomerDevices.Remove(customerDevicesJTable);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
 
         // GET: CustomerDevicesJTables
         public ActionResult Index()

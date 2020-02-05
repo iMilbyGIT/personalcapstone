@@ -19,7 +19,7 @@
                 </button>
                 @Html.ActionLink("NeighborNerd", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
-            <div class="navbar-collapse collapse">
+            <div class="navbar-collapse collapse"> 
                 @if (User.IsInRole("Owner"))
                 {
                 <ul class="nav navbar-nav">
@@ -39,8 +39,9 @@
                 @if (User.IsInRole("Customer"))
                 {
             <ul class="nav navbar-nav">
-                <li>@Html.ActionLink("Create Ticket", "Create", "Tickets")</li>
-                <li>@Html.ActionLink("Device List - Owned Devices", "Index", "Devices")</li>
+                <li>@Html.ActionLink("Tickets", "Index", "Tickets")</li>
+                @*<li>@Html.ActionLink("Create Device Profile", "Index", "Devices")</li>*@
+                <li>@Html.ActionLink("Device Profile", "Index", "CustomerDevicesJTables")</li>
                 <li>@Html.ActionLink("Pay For Service", "Payment", "Customers")</li>
                 <li>@Html.ActionLink("Map", "Map", "Customers")</li>
             </ul>

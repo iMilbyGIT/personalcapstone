@@ -7,13 +7,13 @@ namespace AdamPersonalCapstone.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.0")]
-    public sealed partial class newnenewnew : IMigrationMetadata
+    public sealed partial class hadissuesdeletedpriormigrations : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(newnenewnew));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(hadissuesdeletedpriormigrations));
         
         string IMigrationMetadata.Id
         {
-            get { return "202002041329190_newnenewnew"; }
+            get { return "202002051524460_hadissuesdeletedpriormigrations"; }
         }
         
         string IMigrationMetadata.Source

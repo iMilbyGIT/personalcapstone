@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using AdamPersonalCapstone.Models;
+using Microsoft.AspNet.Identity;
 
 namespace AdamPersonalCapstone.Controllers
 {
@@ -20,9 +21,19 @@ namespace AdamPersonalCapstone.Controllers
             var tickets = db.Tickets.Include(t => t.Customer).Include(t => t.Device).Include(t => t.Employee);
             return View(tickets.ToList());
         }
+        public ActionResult CreateTicket(int id)
+        {
+            var cuserId = User.Identity.GetUserId();
+            var customer = db.Customers.Where(c => c.ApplicationId == cuserId).FirstOrDefault();
+            Ticket ticket = new Ticket();
+            ticket.DeviceId = id;
+            ticket.CustomerId = customer.CustomerId;
+            db.Tickets.Add(ticket);
+            db.SaveChanges();
+            return View();
+        }
 
-
-        public ActionResult SentTicket()
+        public ActionResult SentTickets()
         {
             return View();
         }
@@ -59,6 +70,9 @@ namespace AdamPersonalCapstone.Controllers
         {
             if (ModelState.IsValid)
             {
+                var cuserId = User.Identity.GetUserId();
+                var customer = db.Customers.Where(c => c.ApplicationId == cuserId).FirstOrDefault();
+                ticket.CustomerId = customer.CustomerId;
                 db.Tickets.Add(ticket);
                 db.SaveChanges();
                 return RedirectToAction("Index");

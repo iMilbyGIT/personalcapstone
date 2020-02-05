@@ -17,9 +17,9 @@
         <th>
             @Html.DisplayNameFor(model => model.Name)
         </th>
-        <th>
+        @*<th>
             @Html.DisplayNameFor(model => model.Owned)
-        </th>
+        </th>*@
         <th></th>
     </tr>
 
@@ -31,14 +31,16 @@
         <td>
             @Html.DisplayFor(modelItem => item.Name)
         </td>
-        <td>
+        @*<td>
             @Html.CheckBoxFor(modelItem => item.Owned)
-        </td>
-        <td>
-            @*@Html.ActionLink("Edit", "Edit", new { id=item.DevicesId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.DevicesId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.DevicesId })*@
-        </td>
+        </td>*@
+    <td>
+        @Html.ActionLink("Save To Profile", "AddDevice", "CustomerDevicesJTables", new { id = item.DevicesId }, null) |
+        @Html.ActionLink("Remove From Profile", "RemoveDevice", "CustomerDevicesJTables", new { id = item.DevicesId }, null)
+        @*@Html.ActionLink("Edit", "Edit", new { id=item.DevicesId }) |
+        @Html.ActionLink("Details", "Details", new { id=item.DevicesId }) |
+        @Html.ActionLink("Delete", "Delete", new { id=item.DevicesId })*@
+    </td>
     </tr>
 }
 

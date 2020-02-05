@@ -25,10 +25,10 @@ namespace AdamPersonalCapstone.Models
         public Device Device { get; set; }
 
         [Display(Name = "Message Sent At")]
-        public DateTime MessageSent { get; set; }
+        public DateTime? MessageSent { get; set; }
 
         [Display(Name = "Message Received At")]
-        public DateTime MessageReceived { get; set; }
+        public DateTime? MessageReceived { get; set; }
 
         [Display(Name = "Ticket Subject")]
         public string Subject { get; set; }

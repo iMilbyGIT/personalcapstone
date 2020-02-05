@@ -19,8 +19,5 @@ namespace AdamPersonalCapstone.Models
 
         public bool Owned { get; set; }
 
-        public Customer customer { get; set; }
-
-
     }
 }

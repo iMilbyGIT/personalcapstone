@@ -212,49 +212,13 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="ITokenGenerator.cs" />
-    <Compile Include="Migrations\202001292201051_CreatedTicketTableandReSeeding.cs" />
-    <Compile Include="Migrations\202001292201051_CreatedTicketTableandReSeeding.Designer.cs">
-      <DependentUpon>202001292201051_CreatedTicketTableandReSeeding.cs</DependentUpon>
+    <Compile Include="Migrations\202002051524460_hadissuesdeletedpriormigrations.cs" />
+    <Compile Include="Migrations\202002051524460_hadissuesdeletedpriormigrations.designer.cs">
+      <DependentUpon>202002051524460_hadissuesdeletedpriormigrations.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202001301350280_SeedingDatabaseWithCellPhoneInfo.cs" />
-    <Compile Include="Migrations\202001301350280_SeedingDatabaseWithCellPhoneInfo.Designer.cs">
-      <DependentUpon>202001301350280_SeedingDatabaseWithCellPhoneInfo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202001301659065_newnew.cs" />
-    <Compile Include="Migrations\202001301659065_newnew.Designer.cs">
-      <DependentUpon>202001301659065_newnew.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002011627147_newnewnewwww.cs" />
-    <Compile Include="Migrations\202002011627147_newnewnewwww.Designer.cs">
-      <DependentUpon>202002011627147_newnewnewwww.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002041329190_newnenewnew.cs" />
-    <Compile Include="Migrations\202002041329190_newnenewnew.designer.cs">
-      <DependentUpon>202002041329190_newnenewnew.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002041353191_new.cs" />
-    <Compile Include="Migrations\202002041353191_new.designer.cs">
-      <DependentUpon>202002041353191_new.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002041456088_paymentaddition.cs" />
-    <Compile Include="Migrations\202002041456088_paymentaddition.designer.cs">
-      <DependentUpon>202002041456088_paymentaddition.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002041618439_integratedpaypalfully.cs" />
-    <Compile Include="Migrations\202002041618439_integratedpaypalfully.designer.cs">
-      <DependentUpon>202002041618439_integratedpaypalfully.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002041649175_seedingdevicedatabase.cs" />
-    <Compile Include="Migrations\202002041649175_seedingdevicedatabase.designer.cs">
-      <DependentUpon>202002041649175_seedingdevicedatabase.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002041707403_tryingtoseeddevicesdatabaseagain.cs" />
-    <Compile Include="Migrations\202002041707403_tryingtoseeddevicesdatabaseagain.designer.cs">
-      <DependentUpon>202002041707403_tryingtoseeddevicesdatabaseagain.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002041723252_addedboolforowned.cs" />
-    <Compile Include="Migrations\202002041723252_addedboolforowned.designer.cs">
-      <DependentUpon>202002041723252_addedboolforowned.cs</DependentUpon>
+    <Compile Include="Migrations\202002051922195_changeddatetimetonullabledatetime.cs" />
+    <Compile Include="Migrations\202002051922195_changeddatetimetonullabledatetime.designer.cs">
+      <DependentUpon>202002051922195_changeddatetimetonullabledatetime.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -460,6 +424,9 @@
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\Customers\Payment.cshtml" />
+    <Content Include="Views\Devices\AddPhoneToCustomerDevices.cshtml" />
+    <Content Include="Views\Customers\DeviceProfile.cshtml" />
+    <Content Include="Views\Tickets\CreateTicket.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -474,45 +441,18 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202001292201051_CreatedTicketTableandReSeeding.resx">
-      <DependentUpon>202001292201051_CreatedTicketTableandReSeeding.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202001301350280_SeedingDatabaseWithCellPhoneInfo.resx">
-      <DependentUpon>202001301350280_SeedingDatabaseWithCellPhoneInfo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202001301659065_newnew.resx">
-      <DependentUpon>202001301659065_newnew.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002011627147_newnewnewwww.resx">
-      <DependentUpon>202002011627147_newnewnewwww.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002041329190_newnenewnew.resx">
-      <DependentUpon>202002041329190_newnenewnew.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002041353191_new.resx">
-      <DependentUpon>202002041353191_new.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002041456088_paymentaddition.resx">
-      <DependentUpon>202002041456088_paymentaddition.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002041618439_integratedpaypalfully.resx">
-      <DependentUpon>202002041618439_integratedpaypalfully.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002041649175_seedingdevicedatabase.resx">
-      <DependentUpon>202002041649175_seedingdevicedatabase.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002041707403_tryingtoseeddevicesdatabaseagain.resx">
-      <DependentUpon>202002041707403_tryingtoseeddevicesdatabaseagain.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002041723252_addedboolforowned.resx">
-      <DependentUpon>202002041723252_addedboolforowned.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202002051524460_hadissuesdeletedpriormigrations.resx">
+      <DependentUpon>202002051524460_hadissuesdeletedpriormigrations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002051922195_changeddatetimetonullabledatetime.resx">
+      <DependentUpon>202002051922195_changeddatetimetonullabledatetime.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

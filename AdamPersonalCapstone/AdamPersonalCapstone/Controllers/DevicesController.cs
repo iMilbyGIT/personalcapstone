@@ -20,26 +20,6 @@ namespace AdamPersonalCapstone.Controllers
             return View(db.Devices.ToList());
         }
 
-        public ActionResult AddPhoneToCustomerDevices(int CustomerId, int id, Device device)
-        {
-            var currentDevice = db.Devices.Where(d => d.DevicesId == id).Include(d => d.Brand).Include(d => d.Name).Include(o => o.Owned);
-            var newDevice = new Device();
-            Customer cust = db.Customers.Find(CustomerId);
-            if (currentDevice.Owned == true)
-            {
-                cust.devices.Add(newDevice);
-                db.SaveChanges();
-                return View(newDevice);
-            }
-            else if (currentDevice.Owned == false)
-            {
-                cust.devices.Remove(newDevice);
-                db.SaveChanges();
-                return View(newDevice);
-            }
-            return View();
-        }
-
         // GET: Devices/Details/5
         public ActionResult Details(int? id)
         {
