@@ -15,7 +15,7 @@ namespace AdamPersonalCapstone.Controllers
     public class CustomersController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
-        // GET: Owners
+        // GET: Customers
         public ActionResult Index()
         {
             var userId = User.Identity.GetUserId();
@@ -58,7 +58,7 @@ namespace AdamPersonalCapstone.Controllers
             Console.WriteLine(message.Sid);
         }
 
-        // GET: Owners/Details/5
+        // GET: Customers/Details/5
         public ActionResult Details(int id)
         {
             var customer = db.Customers.Where(a => a.CustomerId == id).FirstOrDefault();
@@ -72,7 +72,7 @@ namespace AdamPersonalCapstone.Controllers
             return View(customer);
         }
 
-        // POST: Owners/Create
+        // POST: Customers/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(Customer customer)
@@ -94,7 +94,7 @@ namespace AdamPersonalCapstone.Controllers
             }
         }
 
-        // GET: Owners/Edit/5
+        // GET: Customers/Edit/5
         [Authorize(Roles = "Customer")]
         public ActionResult Edit(int id)
         {
@@ -110,7 +110,7 @@ namespace AdamPersonalCapstone.Controllers
             return View(customer);
         }
 
-        // POST: Owners/Edit/5
+        // POST: Customers/Edit/5
         [HttpPost]
         [Authorize(Roles = "Customer")]
         public ActionResult Edit(Customer customer)
@@ -126,7 +126,7 @@ namespace AdamPersonalCapstone.Controllers
             return RedirectToAction("Index");
         }
 
-        // GET: Owners/Delete/5
+        // GET: Customers/Delete/5
         [Authorize(Roles = "Customer")]
         public ActionResult Delete(int id)
         {
@@ -142,7 +142,7 @@ namespace AdamPersonalCapstone.Controllers
             return View(customer);
         }
 
-        // POST: Owners/Delete/5
+        // POST: Customers/Delete/5
         [Authorize(Roles = "Customer")]
         [HttpPost]
         public ActionResult Delete(int id, Customer customer)

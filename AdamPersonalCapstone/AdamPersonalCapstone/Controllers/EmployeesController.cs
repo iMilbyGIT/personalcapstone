@@ -1,7 +1,10 @@
 ﻿using AdamPersonalCapstone.Models;
+using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 
@@ -19,67 +22,94 @@ namespace AdamPersonalCapstone.Controllers
         // GET: Employees/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            var employee = db.Employees.Where(a => a.EmployeeId == id).FirstOrDefault();
+            return View(employee);
         }
 
         // GET: Employees/Create
         public ActionResult Create()
         {
-            return View();
+            Employee employee = new Employee();
+            return View(employee);
         }
 
         // POST: Employees/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(Employee employee)
         {
             try
             {
-                // TODO: Add insert logic here
+                var userId = User.Identity.GetUserId();
+                employee.ApplicationId = userId;
+                var foundEmployee = db.Users.Where(e => e.Id == employee.ApplicationId).FirstOrDefault();
+                employee.Email = foundEmployee.Email;
+                db.Employees.Add(employee);
+                db.SaveChanges();
 
                 return RedirectToAction("Index");
             }
             catch
             {
-                return View();
+                return RedirectToAction("Index");
             }
         }
 
         // GET: Employees/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            var employee = db.Employees.Find(id);
+            if (employee == null)
+            {
+                return HttpNotFound();
+            }
+            return View(employee);
         }
 
         // POST: Employees/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        [Authorize(Roles = "Employee")]
+        public ActionResult Edit(Employee employee)
         {
-            try
+            if (ModelState.IsValid)
             {
-                // TODO: Add update logic here
-
+                var userId = User.Identity.GetUserId();
+                employee.ApplicationId = userId;
+                db.Entry(employee).State = EntityState.Modified;
+                db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            catch
-            {
-                return View();
-            }
+            return RedirectToAction("Index");
         }
 
         // GET: Employees/Delete/5
+        [Authorize(Roles = "Employee")]
         public ActionResult Delete(int id)
         {
-            return View();
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            var employee = db.Employees.Find(id);
+            if (employee == null)
+            {
+                return HttpNotFound();
+            }
+            return View(employee);
         }
 
         // POST: Employees/Delete/5
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        public ActionResult Delete(int id, Employee employee)
         {
             try
             {
-                // TODO: Add delete logic here
-
+                var foundEmployee = db.Employees.Find(id);
+                db.Employees.Remove(foundEmployee);
+                db.SaveChanges();
                 return RedirectToAction("Index");
             }
             catch
