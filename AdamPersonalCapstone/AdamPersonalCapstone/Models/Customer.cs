@@ -42,7 +42,9 @@ namespace AdamPersonalCapstone.Models
         public DateTime Birthday { get; set; } //birthday selector for birthday discounts for using platform
         
         [Display(Name = "Owned Devices")]
-        public List<Device> OwnedDevices { get; set; }
+        public List<Device> ListOfDevices { get; set; }
+
+        public ICollection<Device> devices{ get; set; }
 
         [Display(Name = "Personal Devices")]
         public List<string> PersonalDevices { get; set; }

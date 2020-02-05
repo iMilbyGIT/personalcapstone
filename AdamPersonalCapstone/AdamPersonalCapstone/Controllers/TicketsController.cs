@@ -20,6 +20,8 @@ namespace AdamPersonalCapstone.Controllers
             var tickets = db.Tickets.Include(t => t.Customer).Include(t => t.Device).Include(t => t.Employee);
             return View(tickets.ToList());
         }
+
+
         public ActionResult SentTicket()
         {
             return View();

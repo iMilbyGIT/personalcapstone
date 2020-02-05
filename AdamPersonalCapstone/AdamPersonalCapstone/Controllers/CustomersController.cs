@@ -43,15 +43,21 @@ namespace AdamPersonalCapstone.Controllers
         {
             return View();
         }
-        //public bool IsDeviceOwned(Customer customer, Device device)
+        //public void IsDeviceOwned(Customer customer, Device device, int id)
         //{
+        //    var currentDevice = db.Devices.Where(d => d.DevicesId == id);
         //    string currentUserId = User.Identity.GetUserId();
         //    var currentCust = db.Customers.Where(c => c.ApplicationId == currentUserId).SingleOrDefault();
         //    if (device.Owned == true)
         //    {
-        //        db.Entry(customer.OwnedDevices).State = EntityState.Added;
+        //        db.Entry(currentCust.devices).State = EntityState.Added;
+        //        db.Entry(currentDevice).State = EntityState.Added;
         //    }
-        //    return customer;
+        //    else if (device.Owned == false)
+        //    {
+        //        db.Entry(currentCust.devices).State = EntityState.Deleted;
+        //        db.Entry(currentDevice).State = EntityState.Deleted;
+        //    }
         //}
         [ChildActionOnly]
         public void MapClick()
