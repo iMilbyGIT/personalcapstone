@@ -16,7 +16,10 @@ namespace AdamPersonalCapstone.Controllers
         // GET: Employees
         public ActionResult Index()
         {
-            return View();
+            var userId = User.Identity.GetUserId();
+            var user = db.Users.Where(c => c.Id == userId).FirstOrDefault();
+            var employee = db.Employees.Where(c => c.ApplicationId == userId).FirstOrDefault();
+            return View(employee);
         }
 
         // GET: Employees/Details/5

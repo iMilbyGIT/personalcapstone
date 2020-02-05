@@ -12,76 +12,107 @@ namespace AdamPersonalCapstone.Controllers
 {
     public class OwnersController : Controller
     {
+        private ApplicationDbContext db = new ApplicationDbContext();
         // GET: Owners
         public ActionResult Index()
         {
-            return View();
+            var userId = User.Identity.GetUserId();
+            var user = db.Users.Where(c => c.Id == userId).FirstOrDefault();
+            var owner = db.Owners.Where(c => c.ApplicationId == userId).FirstOrDefault();
+            return View(owner);
         }
 
         // GET: Owners/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            var owner = db.Owners.Where(a => a.OwnerId == id).FirstOrDefault();
+            return View(owner);
         }
 
         // GET: Owners/Create
         public ActionResult Create()
         {
-            return View();
+            Owner owner = new Owner();
+            return View(owner);
         }
 
         // POST: Owners/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(Owner owner)
         {
             try
             {
-                // TODO: Add insert logic here
+                var userId = User.Identity.GetUserId();
+                owner.ApplicationId = userId;
+                var foundOwner = db.Users.Where(e => e.Id == owner.ApplicationId).FirstOrDefault();
+                owner.Email = foundOwner.Email;
+                db.Owners.Add(owner);
+                db.SaveChanges();
 
                 return RedirectToAction("Index");
             }
             catch
             {
-                return View();
+                return RedirectToAction("Index");
             }
         }
 
         // GET: Owners/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            var owner = db.Owners.Find(id);
+            if (owner == null)
+            {
+                return HttpNotFound();
+            }
+            return View(owner);
         }
 
         // POST: Owners/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        [Authorize(Roles = "Owner")]
+        public ActionResult Edit(Owner owner)
         {
-            try
+            if (ModelState.IsValid)
             {
-                // TODO: Add update logic here
-
+                var userId = User.Identity.GetUserId();
+                owner.ApplicationId = userId;
+                db.Entry(owner).State = EntityState.Modified;
+                db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            catch
-            {
-                return View();
-            }
+            return RedirectToAction("Index");
         }
 
         // GET: Owners/Delete/5
+        [Authorize(Roles = "Owner")]
         public ActionResult Delete(int id)
         {
-            return View();
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            var owner = db.Owners.Find(id);
+            if (owner == null)
+            {
+                return HttpNotFound();
+            }
+            return View(owner);
         }
 
         // POST: Owners/Delete/5
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        public ActionResult Delete(int id, Owner owner)
         {
             try
             {
-                // TODO: Add delete logic here
-
+                var foundOwner = db.Owners.Find(id);
+                db.Owners.Remove(foundOwner);
+                db.SaveChanges();
                 return RedirectToAction("Index");
             }
             catch

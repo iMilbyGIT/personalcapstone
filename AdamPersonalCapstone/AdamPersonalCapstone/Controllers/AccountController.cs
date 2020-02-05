@@ -93,19 +93,19 @@ namespace AdamPersonalCapstone.Controllers
                 }
                 else if (roles.Contains("Employee"))
                 {
-                    var musician = db.Employees.Where(u => u.ApplicationId == user.Id).FirstOrDefault();
-                    if (musician == null)
+                    var employee = db.Employees.Where(u => u.ApplicationId == user.Id).FirstOrDefault();
+                    if (employee == null)
                     {
-                        return RedirectToAction("Create", "Employees"); //If they never made profile after registration then they must go to "Create", "Musician"
+                        return RedirectToAction("Create", "Employees"); //If they never made profile after registration then they must go to "Create", "employee"
                     }
                     return RedirectToAction("Index", "Home"); //Redirect to there profile "Index", "Employees"
                 }
                 else if (roles.Contains("Owner"))
                 {
-                    var musician = db.Owners.Where(u => u.ApplicationId == user.Id).FirstOrDefault();
-                    if (musician == null)
+                    var owner = db.Owners.Where(u => u.ApplicationId == user.Id).FirstOrDefault();
+                    if (owner == null)
                     {
-                        return RedirectToAction("Create", "Owners"); //If they never made profile after registration then they must go to "Create", "Musician"
+                        return RedirectToAction("Create", "Owners"); //If they never made profile after registration then they must go to "Create", "owner"
                     }
                     return RedirectToAction("Index", "Home"); //Redirect to there profile "Index", "Owners"
                 }
@@ -202,7 +202,7 @@ namespace AdamPersonalCapstone.Controllers
                     }
                     else if (model.UserRoles.Equals("Employee"))
                     {
-                        return RedirectToAction("Create", "Musicians");
+                        return RedirectToAction("Create", "Employees");
                     }
                     else if (model.UserRoles.Equals("Owner"))
                     {
