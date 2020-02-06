@@ -220,6 +220,10 @@
     <Compile Include="Migrations\202002051922195_changeddatetimetonullabledatetime.designer.cs">
       <DependentUpon>202002051922195_changeddatetimetonullabledatetime.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202002061605052_addedtwoboolsforticketstatus.cs" />
+    <Compile Include="Migrations\202002061605052_addedtwoboolsforticketstatus.designer.cs">
+      <DependentUpon>202002061605052_addedtwoboolsforticketstatus.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -455,6 +459,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202002051922195_changeddatetimetonullabledatetime.resx">
       <DependentUpon>202002051922195_changeddatetimetonullabledatetime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002061605052_addedtwoboolsforticketstatus.resx">
+      <DependentUpon>202002061605052_addedtwoboolsforticketstatus.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

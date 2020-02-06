@@ -32,39 +32,51 @@
         <th>
             @Html.DisplayNameFor(model => model.Message)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.isClaimed)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.isCompleted)
+        </th>
         <th></th>
     </tr>
 
 @foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.EmployeeId)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CustomerId)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DeviceId)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MessageSent)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MessageReceived)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Subject)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Message)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.TicketId }) |
-            @Html.ActionLink("Details", "Details", new { id = item.TicketId }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.TicketId }) |
-            @Html.ActionLink("Claim", "Claim", new { id = item.TicketId })
-        </td>
-    </tr>
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.EmployeeId)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.CustomerId)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.DeviceId)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.MessageSent)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.MessageReceived)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Subject)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Message)
+    </td>
+    <td>
+        @Html.CheckBoxFor(modelItem => item.isClaimed)
+    </td>
+    <td>
+        @Html.CheckBoxFor(modelItem => item.isCompleted)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.TicketId }) |
+        @Html.ActionLink("Details", "Details", new { id = item.TicketId }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.TicketId }) |
+        @Html.ActionLink("Claim", "Claim", new { id = item.TicketId })
+    </td>
+</tr>
 }
 
 </table>

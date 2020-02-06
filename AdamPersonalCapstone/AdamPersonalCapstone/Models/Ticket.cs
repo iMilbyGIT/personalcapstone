@@ -35,5 +35,9 @@ namespace AdamPersonalCapstone.Models
 
         [Display(Name = "Ticket Message")]
         public string Message { get; set; }
+
+        public bool isClaimed { get; set; }
+
+        public bool isCompleted { get; set; }
     }
 }
