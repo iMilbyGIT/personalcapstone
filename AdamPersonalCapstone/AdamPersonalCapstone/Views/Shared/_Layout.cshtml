@@ -23,8 +23,9 @@
                 @if (User.IsInRole("Owner"))
                 {
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Pending Tickets", "Index", "Tickets")</li>
-                    <li>@Html.ActionLink("Completed Tickets", "Index", "Tickets")</li>
+                    <li>@Html.ActionLink("Pending Tickets", "Pending", "Tickets")</li>
+                    <li>@Html.ActionLink("Claimed Tickets", "Claim", "Tickets")</li>
+                    <li>@Html.ActionLink("Completed Tickets", "Complete", "Tickets")</li>
                     <li>@Html.ActionLink("Employee Details", "Details", "Employees")</li>
                     <li>@Html.ActionLink("Customer Details", "Details", "Customers")</li>
                 </ul>
@@ -32,8 +33,9 @@
                 @if (User.IsInRole("Employee"))
                 {
                     <ul class="nav navbar-nav">
-                        <li>@Html.ActionLink("Pending Tickets", "Index", "Tickets")</li>
-                        <li>@Html.ActionLink("Completed Tickets", "Index", "Tickets")</li>
+                        <li>@Html.ActionLink("Pending Tickets", "Pending", "Tickets")</li>
+                        <li>@Html.ActionLink("Claimed Tickets", "Claim", "Tickets")</li>
+                        <li>@Html.ActionLink("Completed Tickets", "Complete", "Tickets")</li>
                     </ul>
                 }
                 @if (User.IsInRole("Customer"))

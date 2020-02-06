@@ -32,10 +32,27 @@ namespace AdamPersonalCapstone.Controllers
             db.SaveChanges();
             return View();
         }
-
-        public ActionResult SentTickets()
+        public ActionResult Claim(Ticket ticket, Employee employee, int id)
         {
-            return View();
+            var eUserId = User.Identity.GetUserId();
+            var currentEmployee = db.Employees.Where(e => e.ApplicationId == eUserId).FirstOrDefault();
+            ticket.EmployeeId = employee.EmployeeId;
+            var tickets = db.Tickets.Include(t => t.Customer).Include(t => t.Device).Include(t => t.Employee);
+            return View(tickets.ToList());
+        }
+        public ActionResult Complete(Ticket ticket, Employee employee, int id)
+        {
+            var eUserId = User.Identity.GetUserId();
+            var currentEmployee = db.Employees.Where(e => e.ApplicationId == eUserId).FirstOrDefault();
+            ticket.EmployeeId = employee.EmployeeId;
+            var tickets = db.Tickets.Include(t => t.Customer).Include(t => t.Device).Include(t => t.Employee);
+            return View(tickets.ToList());
+        }
+
+        public ActionResult Pending()
+        {
+            var tickets = db.Tickets.Include(t => t.Customer).Include(t => t.Device).Include(t => t.Employee);
+            return View(tickets.ToList());
         }
         // GET: Tickets/Details/5
         public ActionResult Details(int? id)

@@ -427,6 +427,9 @@
     <Content Include="Views\Devices\AddPhoneToCustomerDevices.cshtml" />
     <Content Include="Views\Customers\DeviceProfile.cshtml" />
     <Content Include="Views\Tickets\CreateTicket.cshtml" />
+    <Content Include="Views\Tickets\Pending.cshtml" />
+    <Content Include="Views\Tickets\Claim.cshtml" />
+    <Content Include="Views\Tickets\Complete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
