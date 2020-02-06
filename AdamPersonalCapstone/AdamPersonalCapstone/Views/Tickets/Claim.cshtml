@@ -23,9 +23,9 @@
         <th>
             @Html.DisplayNameFor(model => model.MessageSent)
         </th>
-        <th>
+        @*<th>
             @Html.DisplayNameFor(model => model.MessageReceived)
-        </th>
+        </th>*@
         <th>
             @Html.DisplayNameFor(model => model.Subject)
         </th>
@@ -56,9 +56,9 @@
     <td>
         @Html.DisplayFor(modelItem => item.MessageSent)
     </td>
-    <td>
+    @*<td>
         @Html.DisplayFor(modelItem => item.MessageReceived)
-    </td>
+    </td>*@
     <td>
         @Html.DisplayFor(modelItem => item.Subject)
     </td>
@@ -72,10 +72,10 @@
         @Html.CheckBoxFor(modelItem => item.isCompleted)
     </td>
     <td>
-        @Html.ActionLink("Edit", "Edit", new { id = item.TicketId }) |
-        @Html.ActionLink("Details", "Details", new { id = item.TicketId }) |
-        @Html.ActionLink("Delete", "Delete", new { id = item.TicketId }) |
-        @Html.ActionLink("Complete", "Complete", new { id = item.TicketId })
+        <a class="badge" style="color: deepskyblue" @Html.ActionLink("Edit", "Edit", new { id = item.TicketId })></a>
+        <a class="badge" style="color: deepskyblue"@Html.ActionLink("Details", "Details", new { id = item.TicketId })></a>
+        <a class="badge" style="color: deepskyblue"@Html.ActionLink("Delete", "Delete", new { id = item.TicketId })></a>
+        <a class="badge" style="color: deepskyblue"@Html.ActionLink("Complete", "Complete", new { id = item.TicketId })></a>
     </td>
 </tr>
     }

@@ -50,7 +50,7 @@
             @Html.DisplayFor(model => model.PhoneNumber)
         </dd>
 
-        <dt>
+        @*<dt>
             @Html.DisplayNameFor(model => model.StreetAddress)
         </dt>
 
@@ -88,11 +88,11 @@
 
         <dd>
             @Html.DisplayFor(model => model.Birthday)
-        </dd>
+        </dd>*@
 
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.CustomerId }) |
-    @Html.ActionLink("Back to List", "Index")
+    <a class="badge" style="color: deepskyblue" @Html.ActionLink("Edit", "Edit", new { id = Model.EmployeeId })></a>
+    <a class="badge" style="color: deepskyblue" @Html.ActionLink("Back to List", "Index")></a>
 </p>

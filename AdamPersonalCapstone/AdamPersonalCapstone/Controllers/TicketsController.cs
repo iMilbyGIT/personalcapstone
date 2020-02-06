@@ -32,21 +32,19 @@ namespace AdamPersonalCapstone.Controllers
             db.SaveChanges();
             return View();
         }
-        public ActionResult Claim(Ticket ticket, Employee employee, int id)
+        public ActionResult Claim()
         {
             var eUserId = User.Identity.GetUserId();
             var currentEmployee = db.Employees.Where(e => e.ApplicationId == eUserId).FirstOrDefault();
-            ticket.EmployeeId = employee.EmployeeId;
-            var tickets = db.Tickets.Include(t => t.Customer).Include(t => t.Device).Include(t => t.Employee);
-            return View(tickets.ToList());
+            var employeeTickets = db.Tickets.Where(t => t.EmployeeId == currentEmployee.EmployeeId);
+            return View(employeeTickets);
         }
-        public ActionResult Complete(Ticket ticket, Employee employee, int id)
+        public ActionResult Complete()
         {
             var eUserId = User.Identity.GetUserId();
             var currentEmployee = db.Employees.Where(e => e.ApplicationId == eUserId).FirstOrDefault();
-            ticket.EmployeeId = employee.EmployeeId;
-            var tickets = db.Tickets.Include(t => t.Customer).Include(t => t.Device).Include(t => t.Employee);
-            return View(tickets.ToList());
+            var employeeTickets = db.Tickets.Where(t => t.EmployeeId == currentEmployee.EmployeeId);
+            return View(employeeTickets);
         }
 
         public ActionResult Pending()

@@ -43,13 +43,13 @@
             @Html.DisplayFor(model => model.MessageSent)
         </dd>
 
-        <dt>
+        @*<dt>
             @Html.DisplayNameFor(model => model.MessageReceived)
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.MessageReceived)
-        </dd>
+        </dd>*@
 
         <dt>
             @Html.DisplayNameFor(model => model.Subject)
@@ -74,7 +74,7 @@
 
         <div class="form-actions no-color">
             <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+            <a class="badge" style="color: deepskyblue" @Html.ActionLink("Back to List", "Index")></a>
         </div>
     }
 </div>

@@ -437,6 +437,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\Image\" />
     <Folder Include="Views\Maps\" />
     <Folder Include="Views\Rating\" />
     <Folder Include="Views\Token\" />

@@ -11,20 +11,21 @@
     <link rel="stylesheet" href="~/Content/Site.css" />
 </head>
 <body>
-
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col">
-                <h1 class="display-4">Neighborhood Nerd Map</h1>
+    <div class="jumbotron">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col">
+                    <h1 class="display-4">Neighborhood Nerd Map</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div id="map"></div>
+                </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col">
-                <div id="map"></div>
-            </div>
         </div>
-    </div>
-    <script>
+        <script>
         var map;
         function createMap() {
             var options = {
@@ -33,7 +34,7 @@
             };
             map = new google.maps.Map(document.getElementById('map'), options);
 
-            // Create marker 
+            // Create marker
             var marker1 = new google.maps.Marker({
               map: map,
               position: new google.maps.LatLng(43.0851705, -87.8913918),
@@ -58,21 +59,21 @@
               radius: 2000,    // 1 mile = 1609 meters
               fillColor: '#AA0000'
             });
-            circle.bindTo('center', marker1, 'position');        
+            circle.bindTo('center', marker1, 'position');
             var circle = new google.maps.Circle({
               map: map,
               radius: 2000,
               fillColor: '#AA0000'
             });
-            circle.bindTo('center', marker2, 'position'); 
+            circle.bindTo('center', marker2, 'position');
             var circle = new google.maps.Circle({
               map: map,
               radius: 2000,
               fillColor: '#AA0000'
             });
-            circle.bindTo('center', marker3, 'position'); 
+            circle.bindTo('center', marker3, 'position');
 
-            google.maps.event.trigger(marker1, 'click', function () {
+            google.maps.event.addListener(marker1, 'click', function () {
                 @Html.Action("MapClick", "Customers")
             });
 
@@ -84,8 +85,8 @@
                 @Url.Action("MapClick", "Customers");
             })*@
         }
-    </script>
+        </script>
 
-    <script src=@ViewBag.MapUrl async defer></script>
+        <script src=@ViewBag.MapUrl async defer></script>
 </body>
 </html>

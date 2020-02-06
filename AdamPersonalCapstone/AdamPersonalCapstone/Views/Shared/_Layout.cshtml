@@ -32,7 +32,7 @@
                 }
                 @if (User.IsInRole("Employee"))
                 {
-                    <ul class="nav navbar-nav">
+                    <ul class="nav navbar-nav">0
                         <li>@Html.ActionLink("Pending Tickets", "Pending", "Tickets")</li>
                         <li>@Html.ActionLink("Claimed Tickets", "Claim", "Tickets")</li>
                         <li>@Html.ActionLink("Completed Tickets", "Complete", "Tickets")</li>
@@ -42,7 +42,6 @@
                 {
             <ul class="nav navbar-nav">
                 <li>@Html.ActionLink("Tickets", "Index", "Tickets")</li>
-                @*<li>@Html.ActionLink("Create Device Profile", "Index", "Devices")</li>*@
                 <li>@Html.ActionLink("Device Profile", "Index", "CustomerDevicesJTables")</li>
                 <li>@Html.ActionLink("Pay For Service", "Payment", "Customers")</li>
                 <li>@Html.ActionLink("Map", "Map", "Customers")</li>

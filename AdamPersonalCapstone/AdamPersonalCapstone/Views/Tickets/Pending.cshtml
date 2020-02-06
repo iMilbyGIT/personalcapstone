@@ -7,8 +7,8 @@
 <h2>List of Pending Tickets</h2>
 
 @*<p>
-    @Html.ActionLink("Create New", "Create")
-</p>*@
+        @Html.ActionLink("Create New", "Create")
+    </p>*@
 <table class="table">
     <tr>
         <th>
@@ -23,9 +23,9 @@
         <th>
             @Html.DisplayNameFor(model => model.MessageSent)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MessageReceived)
-        </th>
+        @*<th>
+                @Html.DisplayNameFor(model => model.MessageReceived)
+            </th>*@
         <th>
             @Html.DisplayNameFor(model => model.Subject)
         </th>
@@ -41,42 +41,43 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-<tr>
-    <td>
-        @Html.DisplayFor(modelItem => item.EmployeeId)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.CustomerId)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.DeviceId)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.MessageSent)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.MessageReceived)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Subject)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Message)
-    </td>
-    <td>
-        @Html.CheckBoxFor(modelItem => item.isClaimed)
-    </td>
-    <td>
-        @Html.CheckBoxFor(modelItem => item.isCompleted)
-    </td>
-    <td>
-        @Html.ActionLink("Edit", "Edit", new { id = item.TicketId }) |
-        @Html.ActionLink("Details", "Details", new { id = item.TicketId }) |
-        @Html.ActionLink("Delete", "Delete", new { id = item.TicketId }) |
-        @Html.ActionLink("Claim", "Claim", new { id = item.TicketId })
-    </td>
-</tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmployeeId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DeviceId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MessageSent)
+            </td>
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.MessageReceived)
+                </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.Subject)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Message)
+            </td>
+            <td>
+                @Html.CheckBoxFor(modelItem => item.isClaimed)
+            </td>
+            <td>
+                @Html.CheckBoxFor(modelItem => item.isCompleted)
+            </td>
+            <td>
+                <a class="badge" style="color: deepskyblue"@Html.ActionLink("Edit", "Edit", new { id = item.TicketId })></a>
+                <a class="badge" style="color: deepskyblue"@Html.ActionLink("Details", "Details", new { id = item.TicketId })></a>
+                <a class="badge" style="color: deepskyblue"@Html.ActionLink("Delete", "Delete", new { id = item.TicketId })></a>
+                <a class="badge" style="color: deepskyblue"@Html.ActionLink("Claim", "Claim", new { id = item.TicketId })></a>
+            </td>
+        </tr>
+    }
 
 </table>
