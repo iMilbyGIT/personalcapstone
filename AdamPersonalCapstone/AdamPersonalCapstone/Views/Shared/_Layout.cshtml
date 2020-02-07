@@ -6,7 +6,7 @@
     <title>@ViewBag.Title - NeighborNerd</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-
+    @*<img src="~/Content/Image/nhn.png" style="width: 25px; height: 25px" />*@
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -32,7 +32,7 @@
                 }
                 @if (User.IsInRole("Employee"))
                 {
-                    <ul class="nav navbar-nav">0
+                    <ul class="nav navbar-nav">
                         <li>@Html.ActionLink("Pending Tickets", "Pending", "Tickets")</li>
                         <li>@Html.ActionLink("Claimed Tickets", "Claim", "Tickets")</li>
                         <li>@Html.ActionLink("Completed Tickets", "Complete", "Tickets")</li>
@@ -44,7 +44,7 @@
                 <li>@Html.ActionLink("Tickets", "Index", "Tickets")</li>
                 <li>@Html.ActionLink("Device Profile", "Index", "CustomerDevicesJTables")</li>
                 <li>@Html.ActionLink("Pay For Service", "Payment", "Customers")</li>
-                <li>@Html.ActionLink("Map", "Map", "Customers")</li>
+                <li>@Html.ActionLink("Coverage Map", "Map", "Customers")</li>
             </ul>
                 }
                 @Html.Partial("_LoginPartial")
