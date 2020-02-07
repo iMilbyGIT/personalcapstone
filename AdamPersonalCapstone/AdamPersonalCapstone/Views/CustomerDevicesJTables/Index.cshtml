@@ -10,41 +10,43 @@
     @*@Html.ActionLink("Add Another", "Create")*@
     <a class="badge" style="color: deepskyblue"@Html.ActionLink("Add New Device", "Index", "Devices")></a>
 </p>
-<div class="jumbotron">
-    <table class="table">
-        <tr>
-            @*<th>
-                    @Html.DisplayNameFor(model => model.Customer.ApplicationId)
-                </th>*@
-            <th>
-                @Html.DisplayNameFor(model => model.Device.Brand)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Device.Name)
-            </th>
-            <th></th>
-        </tr>
-
-        @foreach (var item in Model)
-        {
+<div class="container">
+    <div class="jumbotron">
+        <table class="table">
             <tr>
-                @*<td>
-                        @Html.HiddenFor(modelItem => item.Customer.ApplicationId)
-                    </td>*@
-                <td>
-                    @Html.DisplayFor(modelItem => item.Device.Brand)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Device.Name)
-                </td>
-                <td>
-                    @*@Html.ActionLink("Edit", "Edit", new { id = item.CustomerDevicesJTableId })
-                        @Html.ActionLink("Details", "Details", new { id = item.CustomerDevicesJTableId }) |*@
-                    <a class="badge" style="color: deepskyblue"@Html.ActionLink("Delete", "Delete", new { id = item.CustomerDevicesJTableId })></a>
-                    <a class="badge" style="color: deepskyblue"@Html.ActionLink("Create Ticket", "Create", "Tickets")></a>
-                </td>
+                @*<th>
+                        @Html.DisplayNameFor(model => model.Customer.ApplicationId)
+                    </th>*@
+                <th>
+                    @Html.DisplayNameFor(model => model.Device.Brand)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Device.Name)
+                </th>
+                <th></th>
             </tr>
-        }
 
-    </table>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    @*<td>
+                            @Html.HiddenFor(modelItem => item.Customer.ApplicationId)
+                        </td>*@
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Device.Brand)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Device.Name)
+                    </td>
+                    <td>
+                        @*@Html.ActionLink("Edit", "Edit", new { id = item.CustomerDevicesJTableId })
+                            @Html.ActionLink("Details", "Details", new { id = item.CustomerDevicesJTableId }) |*@
+                        <a class="badge" style="color: deepskyblue" @Html.ActionLink("Delete", "Delete", new { id = item.CustomerDevicesJTableId })></a>
+                        <a class="badge" style="color: deepskyblue" @Html.ActionLink("Create Ticket", "Create", "Tickets")></a>
+                    </td>
+                </tr>
+            }
+
+        </table>
     </div>
+</div>

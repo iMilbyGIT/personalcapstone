@@ -5035,12 +5035,15 @@ a.badge:focus {
     padding-top: 30px;
     padding-bottom: 30px;
     margin-bottom: 30px;
-    color: inherit;
-    background-color: #eeeeee;
+    color: deepskyblue;
+    background-color: deepskyblue;
+    background-image: url(Image/neighborhoodwallpaper.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .jumbotron h1,
 .jumbotron .h1 {
-  color: inherit;
+  color: deepskyblue;
 }
 .jumbotron p {
   margin-bottom: 15px;

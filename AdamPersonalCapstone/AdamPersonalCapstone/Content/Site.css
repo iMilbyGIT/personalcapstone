@@ -1,8 +1,8 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    color: deepskyblue;
 }
-
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
@@ -26,9 +26,9 @@ textarea {
 }
 /*<img src="~/Content/Image/nhn.png" / >*/
 #map {
-    border: 2px solid #333;
+    border: 2px groove #333;
     height: 500px;
-    width: 400px;
+    width: 1015px;
 }
 .buttonLogo{
     background: url(Image/nhn.png) no-repeat;
@@ -84,4 +84,14 @@ textarea {
 }
 .BackGround {
     color: deepskyblue
+}
+.jumbotron {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+    color: deepskyblue;
+    background-color: deepskyblue;
+    background-image: url(Image/neighborhoodwallpaper.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
