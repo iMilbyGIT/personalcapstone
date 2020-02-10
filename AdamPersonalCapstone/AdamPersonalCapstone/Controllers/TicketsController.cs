@@ -36,20 +36,20 @@ namespace AdamPersonalCapstone.Controllers
         {
             var eUserId = User.Identity.GetUserId();
             var currentEmployee = db.Employees.Where(e => e.ApplicationId == eUserId).FirstOrDefault();
-            var employeeTickets = db.Tickets.Where(t => t.EmployeeId == currentEmployee.EmployeeId);
+            var employeeTickets = db.Tickets.Where(t => t.EmployeeId == currentEmployee.EmployeeId && t.isClaimed == true && t.isCompleted == false);
             return View(employeeTickets);
         }
         public ActionResult Complete()
         {
             var eUserId = User.Identity.GetUserId();
             var currentEmployee = db.Employees.Where(e => e.ApplicationId == eUserId).FirstOrDefault();
-            var employeeTickets = db.Tickets.Where(t => t.EmployeeId == currentEmployee.EmployeeId);
+            var employeeTickets = db.Tickets.Where(t => t.EmployeeId == currentEmployee.EmployeeId && t.isCompleted == true);
             return View(employeeTickets);
         }
 
         public ActionResult Pending()
         {
-            var tickets = db.Tickets.Include(t => t.Customer).Include(t => t.Device).Include(t => t.Employee);
+            var tickets = db.Tickets.Where(t => t.isClaimed == false && t.isCompleted == false).Include(t => t.Customer).Include(t => t.Device).Include(t => t.Employee);
             return View(tickets.ToList());
         }
         // GET: Tickets/Details/5
