@@ -19,7 +19,7 @@
             <img src="~/Content/Image/nhn3.png" alt="Neighborhood Nerd Logo">
         </span>
         <div class="container-fluid">
-            <table class="table">
+            <table class="table" style="color:deepskyblue">
                 <tr>
                     <th>
                         @Html.DisplayNameFor(model => model.Device.Brand)
@@ -42,6 +42,7 @@
                     <th>
                         @Html.DisplayNameFor(model => model.isCompleted)
                     </th>
+                    <th></th>
                 </tr>
 
                 @foreach (var item in Model)
@@ -71,9 +72,9 @@
                         <td>
                         </td>
                         <td>
-                            <a class="badge" style="color: deepskyblue" @Html.ActionLink("Edit", "Edit", new { id = item.TicketId })></a>
-                            <a class="badge" style="color: deepskyblue" @Html.ActionLink("Details", "Details", new { id = item.TicketId })></a>
-                            <a class="badge" style="color: deepskyblue" @Html.ActionLink("Delete", "Delete", new { id = item.TicketId })></a>
+                            <div><a class="badge" style="color: white" @Html.ActionLink("Edit", "Edit", new { id = item.TicketId })></a></div>
+                            <a class="badge" style="color: white" @Html.ActionLink("Details", "Details", new { id = item.TicketId })></a>
+                            <a class="badge" style="color: white" @Html.ActionLink("Delete", "Delete", new { id = item.TicketId })></a>
                         </td>
                     </tr>
                 }
