@@ -4,48 +4,66 @@
     ViewBag.Title = "Payment";
 }
 
+<!DOCTYPE html>
 <h1 style="color:deepskyblue; text-align:center">Payment</h1>
-    <!DOCTYPE html>
 
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1"> 
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" /> 
-    </head>
-
-    <body>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <style>
+        .img-container {
+            text-align: center;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="jumbotron" style="text-align:center">
         <div class="container-fluid" style="padding: 30px; margin: 30px">
-            <script src=@ViewBag.PayPal>
-            </script>
-
-            <div id="paypal-button-container"></div>
-
-            <script>
-                paypal.Buttons({
-                    createOrder: function (data, actions) {
-                        return actions.order.create({
-                            purchase_units: [{
-                                amount: {
-                                    value: '00.01'
-                                }
-                            }]
-                        });
-                    },
-                    onApprove: function (data, actions) {
-                        return actions.order.capture().then(function (details) {
-                            alert('Transaction completed by ' + details.payer.name.given_name);
-                            // Call your server to save the transaction
-                            return fetch('/paypal-transaction-complete', {
-                                method: 'post',
-                                headers: {
-                                    'content-type': 'application/json'
-                                },
-                                body: JSON.stringify({
-                                    orderID: data.orderID
-                                })
-                            });
-                        });
-                    }
-                }).render('#paypal-button-container');
-            </script>
+            <div class="row">
+                <div class="col">
+                    <span class="img-container">
+                        <img src="~/Content/Image/nhn3.png" alt="Neighborhood Nerd Logo">
+                    </span>
+                    <br />
+                    <div id="paypal-button-container"></div>
+                </div>
             </div>
-    </body>
+        </div>
+    </div>
+    <div class="container-fluid" style="padding: 30px; margin: 30px">
+        <script src=@ViewBag.PayPal>
+        </script>
+
+        <div id="paypal-button-container"></div>
+
+        <script>
+            paypal.Buttons({
+                createOrder: function (data, actions) {
+                    return actions.order.create({
+                        purchase_units: [{
+                            amount: {
+                                value: '00.01'
+                            }
+                        }]
+                    });
+                },
+                onApprove: function (data, actions) {
+                    return actions.order.capture().then(function (details) {
+                        alert('Transaction completed by ' + details.payer.name.given_name);
+                        // Call your server to save the transaction
+                        return fetch('/paypal-transaction-complete', {
+                            method: 'post',
+                            headers: {
+                                'content-type': 'application/json'
+                            },
+                            body: JSON.stringify({
+                                orderID: data.orderID
+                            })
+                        });
+                    });
+                }
+            }).render('#paypal-button-container');
+        </script>
+    </div>
+</body>

@@ -2,7 +2,9 @@
     ViewBag.Title = "Map";
 }
 <!DOCTYPE html>
-<html>
+
+<h1 style="color:deepskyblue; text-align:center">Nerd Map</h1>
+
 <head>
     <title>NeighborNerd Map</title>
     <meta name="viewport" content="initial-scale=1.0" />
@@ -21,7 +23,10 @@
         <div class="container-fluid" style="padding: 30px; margin: 30px">
             <div class="row">
                 <div class="col">
-                    <h1 style="color:deepskyblue; text-align:center">Nerd Map</h1>
+                    <span class="img-container">
+                        <img src="~/Content/Image/nhn3.png" alt="Neighborhood Nerd Logo">
+                    </span>
+                    <br />
                 </div>
             </div>
             <div class="row">
@@ -30,11 +35,8 @@
                 </div>
             </div>
         </div>
-        <span class="img-container">
-            <img src="~/Content/Image/nhn3.png" alt="Neighborhood Nerd Logo">
-        </span>
     </div>
-        <script>
+    <script>
         var map;
         function createMap() {
             var options = {
@@ -94,8 +96,8 @@
                 @Url.Action("MapClick", "Customers");
             })*@
         }
-        </script>
+    </script>
 
-        <script src=@ViewBag.MapUrl async defer></script>
+    <script src=@ViewBag.MapUrl async defer></script>
 </body>
 </html>
