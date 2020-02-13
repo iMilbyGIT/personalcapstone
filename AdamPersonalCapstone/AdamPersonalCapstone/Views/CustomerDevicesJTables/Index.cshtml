@@ -4,8 +4,6 @@
     ViewBag.Title = "Index";
 }
 
-<h1 style="color:deepskyblue; text-align:center">Owned Devices</h1>
-
 <head>
     <style>
         .img-container {
@@ -16,10 +14,13 @@
 </head>
 <body>
     <div class="jumbotron" style="text-align:center">
-        <a class="badge" style="color: deepskyblue" @Html.ActionLink("Add New Device", "Index", "Devices")</a>
+        <h1 style="color:deepskyblue; text-align:center">Owned Devices</h1>
+        @*<a class="badge" style="color: deepskyblue" @Html.ActionLink("Add New Device", "Index", "Devices")</a>*@
         <span class="img-container">
             <img src="~/Content/Image/nhn3.png" alt="Neighborhood Nerd Logo">
         </span>
+        <a class="badge" style="color: deepskyblue" @Html.ActionLink("Add New Device", "Index", "Devices")</a>
+        <br />
         <div class="container-fluid">
             <table class="table" style="color:deepskyblue">
                 <tr>
