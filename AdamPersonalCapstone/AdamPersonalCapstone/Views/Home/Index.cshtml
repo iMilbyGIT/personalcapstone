@@ -1,30 +1,40 @@
 ﻿@{
     ViewBag.Title = "Home Page";
+    //Layout = "~/Views/Shared/_Homepage.cshtml";
 }
 
-    <div class="jumbotron">
-        <h2>Neighborhood Nerd LLC</h2>
-        <p class="lead">Your "nerdy" handyman for the modern day.</p>
-        <p><a href="www.neighborhoodnerd.biz" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-        @*@{ Html.RenderPartial("_Rating"); }*@
-    </div>
-
-    <div class="jumbotron">
-        <div class="row">
-            <div class="col-md-4">
-                <h2>Basic Tech Repair</h2>
-                <p></p>
-                <p><a class="btn btn-default" href="https://www.neighborhoodnerd.biz">Learn more &raquo;</a></p>
-            </div>
-            <div class="col-md-4">
-                <h2>Consulation/Next-Step Services</h2>
-                <p></p>
-                <p><a class="btn btn-default" href="https://www.neighborhoodnerd.biz">Learn more &raquo;</a></p>
-            </div>
-            <div class="col-md-4">
-                <h2>Tutorials/Teaching Sessions</h2>
-                <p></p>
-                <p><a class="btn btn-default" href="https://www.neighborhoodnerd.biz">Learn more &raquo;</a></p>
-            </div>
+<head>
+    <style>
+        .img-container {
+            text-align: center;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<div class="jumbotron" style="text-align:center">
+    <h1>Neighborhood Nerd LLC</h1>
+    <p class="lead">Your "nerdy" handyman for the modern day.</p>
+    @*<p><a url="www.neighborhoodnerd.biz" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>*@
+    <div class="row">
+        <div class="col-md-4">
+            <h2>Basic Tech Repair</h2>
+            <p></p>
+            @*<p><a class="btn btn-default" href="https://www.neighborhoodnerd.biz">Learn more &raquo;</a></p>*@
+        </div>
+        <div class="col-md-4">
+            <h2>Consulation/Next-Step Services</h2>
+            <p></p>
+            @*<p><a class="btn btn-default" href="https://www.neighborhoodnerd.biz">Learn more &raquo;</a></p>*@
+        </div>
+        <div class="col-md-4">
+            <h2>Tutorials/Teaching Sessions</h2>
+            <p></p>
+            @*<p><a class="btn btn-default" href="https://www.neighborhoodnerd.biz">Learn more &raquo;</a></p>*@
         </div>
     </div>
+    <span class="img-container">
+        <img src="~/Content/Image/nhn3.png" alt="Neighborhood Nerd Logo">
+    </span>
+</div>
+    </body>

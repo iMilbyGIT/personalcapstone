@@ -245,6 +245,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\homepage.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -434,6 +435,7 @@
     <Content Include="Views\Tickets\Pending.cshtml" />
     <Content Include="Views\Tickets\Claim.cshtml" />
     <Content Include="Views\Tickets\Complete.cshtml" />
+    <Content Include="Views\Shared\_HomePage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -4,49 +4,62 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Owned Devices</h2>
+<h1 style="color:deepskyblue; text-align:center">Owned Devices</h1>
 
 <p>
     @*@Html.ActionLink("Add Another", "Create")*@
-    <a class="badge" style="color: deepskyblue"@Html.ActionLink("Add New Device", "Index", "Devices")></a>
+    <a class="badge" style="color: deepskyblue" @Html.ActionLink("Add New Device", "Index", "Devices")></a>
 </p>
-<div class="container">
-    <div class="jumbotron">
-        <table class="table">
-            <tr>
-                @*<th>
-                        @Html.DisplayNameFor(model => model.Customer.ApplicationId)
-                    </th>*@
-                <th>
-                    @Html.DisplayNameFor(model => model.Device.Brand)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Device.Name)
-                </th>
-                <th></th>
-            </tr>
-
-            @foreach (var item in Model)
-            {
+<head>
+    <style>
+        .img-container {
+            text-align: center;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="jumbotron" style="text-align:center">
+        <span class="img-container">
+            <img src="~/Content/Image/nhn3.png" alt="Neighborhood Nerd Logo">
+        </span>
+        <div class="container-fluid">
+            <table class="table">
                 <tr>
-                    @*<td>
-                            @Html.HiddenFor(modelItem => item.Customer.ApplicationId)
-                        </td>*@
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Device.Brand)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Device.Name)
-                    </td>
-                    <td>
-                        @*@Html.ActionLink("Edit", "Edit", new { id = item.CustomerDevicesJTableId })
-                            @Html.ActionLink("Details", "Details", new { id = item.CustomerDevicesJTableId }) |*@
-                        <a class="badge" style="color: deepskyblue" @Html.ActionLink("Delete", "Delete", new { id = item.CustomerDevicesJTableId })></a>
-                        <a class="badge" style="color: deepskyblue" @Html.ActionLink("Create Ticket", "Create", "Tickets")></a>
-                    </td>
+                    @*<th>
+                            @Html.DisplayNameFor(model => model.Customer.ApplicationId)
+                        </th>*@
+                    <th>
+                        @Html.DisplayNameFor(model => model.Device.Brand)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Device.Name)
+                    </th>
+                    <th></th>
                 </tr>
-            }
 
-        </table>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        @*<td>
+                                @Html.HiddenFor(modelItem => item.Customer.ApplicationId)
+                            </td>*@
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Device.Brand)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Device.Name)
+                        </td>
+                        <td>
+                            @*@Html.ActionLink("Edit", "Edit", new { id = item.CustomerDevicesJTableId })
+                                @Html.ActionLink("Details", "Details", new { id = item.CustomerDevicesJTableId }) |*@
+                            <a class="badge" style="color: deepskyblue" @Html.ActionLink("Delete", "Delete", new { id = item.CustomerDevicesJTableId })></a>
+                            <a class="badge" style="color: deepskyblue" @Html.ActionLink("Create Ticket", "Create", "Tickets")></a>
+                        </td>
+                    </tr>
+                }
+
+            </table>
+        </div>
     </div>
-</div>
+    </body>

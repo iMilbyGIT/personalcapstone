@@ -9,13 +9,19 @@
     <meta charset="utf-8" />
 
     <link rel="stylesheet" href="~/Content/Site.css" />
+    <style>
+        .img-container {
+            text-align: center;
+            display: block;
+        }
+    </style>
 </head>
 <body>
-    <div class="jumbotron">
-        <div class="container-fluid">
+    <div class="jumbotron" style="text-align:center">
+        <div class="container-fluid" style="padding: 30px; margin: 30px">
             <div class="row">
                 <div class="col">
-                    @*<h1 class="display-4">Neighborhood Nerd Map</h1>*@
+                    <h1 style="color:deepskyblue; text-align:center">Nerd Map</h1>
                 </div>
             </div>
             <div class="row">
@@ -24,7 +30,10 @@
                 </div>
             </div>
         </div>
-        </div>
+        <span class="img-container">
+            <img src="~/Content/Image/nhn3.png" alt="Neighborhood Nerd Logo">
+        </span>
+    </div>
         <script>
         var map;
         function createMap() {

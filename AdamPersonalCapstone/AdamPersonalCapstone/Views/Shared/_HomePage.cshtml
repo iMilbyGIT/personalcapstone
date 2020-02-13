@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - NeighborNerd</title>
-    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/homepage.css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
@@ -18,16 +18,16 @@
                 </button>
                 @Html.ActionLink("NeighborNerd", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
-            <div class="navbar-collapse collapse"> 
+            <div class="navbar-collapse collapse">
                 @if (User.IsInRole("Owner"))
                 {
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Pending Tickets", "Pending", "Tickets")</li>
-                    <li>@Html.ActionLink("Claimed Tickets", "Claim", "Tickets")</li>
-                    <li>@Html.ActionLink("Completed Tickets", "Complete", "Tickets")</li>
-                    <li>@Html.ActionLink("Employee Details", "Details", "Employees")</li>
-                    <li>@Html.ActionLink("Customer Details", "Details", "Customers")</li>
-                </ul>
+                    <ul class="nav navbar-nav">
+                        <li>@Html.ActionLink("Pending Tickets", "Pending", "Tickets")</li>
+                        <li>@Html.ActionLink("Claimed Tickets", "Claim", "Tickets")</li>
+                        <li>@Html.ActionLink("Completed Tickets", "Complete", "Tickets")</li>
+                        <li>@Html.ActionLink("Employee Details", "Details", "Employees")</li>
+                        <li>@Html.ActionLink("Customer Details", "Details", "Customers")</li>
+                    </ul>
                 }
                 @if (User.IsInRole("Employee"))
                 {
@@ -39,12 +39,12 @@
                 }
                 @if (User.IsInRole("Customer"))
                 {
-            <ul class="nav navbar-nav">
-                <li>@Html.ActionLink("Tickets", "Index", "Tickets")</li>
-                <li>@Html.ActionLink("Device Profile", "Index", "CustomerDevicesJTables")</li>
-                <li>@Html.ActionLink("Pay For Service", "Payment", "Customers")</li>
-                <li>@Html.ActionLink("Coverage Map", "Map", "Customers")</li>
-            </ul>
+                    <ul class="nav navbar-nav">
+                        <li>@Html.ActionLink("Tickets", "Index", "Tickets")</li>
+                        <li>@Html.ActionLink("Device Profile", "Index", "CustomerDevicesJTables")</li>
+                        <li>@Html.ActionLink("Pay For Service", "Payment", "Customers")</li>
+                        <li>@Html.ActionLink("Coverage Map", "Map", "Customers")</li>
+                    </ul>
                 }
                 @Html.Partial("_LoginPartial")
             </div>

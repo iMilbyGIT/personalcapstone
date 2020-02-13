@@ -4,12 +4,21 @@
     ViewBag.Title = "Claim";
 }
 
-<h2>List of Claimed Tickets</h2>
+<h1 style="color:deepskyblue; text-align:center">List of Claimed Tickets</h1>
 
-@*<p>
-        @Html.ActionLink("Create New", "Create")
-    </p>*@
-<div class="jumbotron">
+<head>
+    <style>
+        .img-container {
+            text-align: center;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<div class="jumbotron" style="text-align:center">
+    <span class="img-container">
+        <img src="~/Content/Image/nhn3.png" alt="Neighborhood Nerd Logo">
+    </span>
     <div class="container-fluid">
         <table class="table">
             <tr>
@@ -25,9 +34,6 @@
                 <th>
                     @Html.DisplayNameFor(model => model.MessageSent)
                 </th>
-                @*<th>
-                        @Html.DisplayNameFor(model => model.MessageReceived)
-                    </th>*@
                 <th>
                     @Html.DisplayNameFor(model => model.Subject)
                 </th>
@@ -58,9 +64,6 @@
                     <td>
                         @Html.DisplayFor(modelItem => item.MessageSent)
                     </td>
-                    @*<td>
-                            @Html.DisplayFor(modelItem => item.MessageReceived)
-                        </td>*@
                     <td>
                         @Html.DisplayFor(modelItem => item.Subject)
                     </td>
@@ -83,5 +86,5 @@
             }
 
         </table>
-        </div>
-</div>
+    </div>
+</div></body>

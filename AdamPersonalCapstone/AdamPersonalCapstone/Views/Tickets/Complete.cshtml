@@ -4,82 +4,86 @@
     ViewBag.Title = "Complete";
 }
 
-<h2>List of Completed Tickets</h2>
+<h1 style="color:deepskyblue; text-align:center">List of Completed Tickets</h1>
 
-@*<p>
-        @Html.ActionLink("Create New", "Create")
-    </p>*@
-<div class="jumbotron">
-    <div class="container-fluid">
-        <table class="table">
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.EmployeeId)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.CustomerId)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.DeviceId)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.MessageSent)
-                </th>
-                @*<th>
-                        @Html.DisplayNameFor(model => model.MessageReceived)
-                    </th>*@
-                <th>
-                    @Html.DisplayNameFor(model => model.Subject)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Message)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.isClaimed)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.isCompleted)
-                </th>
-                <th></th>
-            </tr>
-
-            @foreach (var item in Model)
-            {
+<head>
+    <style>
+        .img-container {
+            text-align: center;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="jumbotron" style="text-align:center">
+        <span class="img-container">
+            <img src="~/Content/Image/nhn3.png" alt="Neighborhood Nerd Logo">
+        </span>
+        <div class="container-fluid">
+            <table class="table">
                 <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.EmployeeId)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.CustomerId)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.DeviceId)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.MessageSent)
-                    </td>
-                    @*<td>
-                            @Html.DisplayFor(modelItem => item.MessageReceived)
-                        </td>*@
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Subject)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Message)
-                    </td>
-                    <td>
-                        @Html.CheckBoxFor(modelItem => item.isClaimed)
-                    </td>
-                    <td>
-                        @Html.CheckBoxFor(modelItem => item.isCompleted)
-                    </td>
-                    <td>
-                        <a class="badge" style="color: deepskyblue" @Html.ActionLink("Details", "Details", new { id = item.TicketId })></a>
-                        <a class="badge" style="color: deepskyblue" @Html.ActionLink("Delete", "Delete", new { id = item.TicketId })></a>
-                    </td>
+                    <th>
+                        @Html.DisplayNameFor(model => model.EmployeeId)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.CustomerId)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.DeviceId)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.MessageSent)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Subject)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Message)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.isClaimed)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.isCompleted)
+                    </th>
+                    <th></th>
                 </tr>
-            }
 
-        </table>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.EmployeeId)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CustomerId)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DeviceId)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.MessageSent)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Subject)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Message)
+                        </td>
+                        <td>
+                            @Html.CheckBoxFor(modelItem => item.isClaimed)
+                        </td>
+                        <td>
+                            @Html.CheckBoxFor(modelItem => item.isCompleted)
+                        </td>
+                        <td>
+                            <a class="badge" style="color: deepskyblue" @Html.ActionLink("Details", "Details", new { id = item.TicketId })></a>
+                            <a class="badge" style="color: deepskyblue" @Html.ActionLink("Delete", "Delete", new { id = item.TicketId })></a>
+                        </td>
+                    </tr>
+                }
+
+            </table>
         </div>
-</div>
+    </div>
+    </body>

@@ -4,89 +4,81 @@
     ViewBag.Title = "Index";
 }
 
-<h2>List of Tickets</h2>
-
-@*<p>
-        @Html.ActionLink("Create New", "Create")
-    </p>*@
-<div class="jumbotron">
-    <table class="table">
-        <tr>
-            @*<th>
-                    @Html.DisplayNameFor(model => model.Customer.ApplicationId)
-                </th>*@
-            <th>
-                @Html.DisplayNameFor(model => model.Device.Brand)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Device.Name)
-            </th>
-            @*<th>
-                    @Html.DisplayNameFor(model => model.Employee.ApplicationId)
-                </th>*@
-            <th>
-                @Html.DisplayNameFor(model => model.MessageSent)
-            </th>
-            @*<th>
-                    @Html.DisplayNameFor(model => model.MessageReceived)
-                </th>*@
-            <th>
-                @Html.DisplayNameFor(model => model.Subject)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Message)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.isClaimed)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.isCompleted)
-            </th>
-            @*<th></th>*@
-        </tr>
-
-        @foreach (var item in Model)
-        {
-            <tr>
-                @*<td>
-                        @Html.DisplayFor(modelItem => item.Customer.ApplicationId)
-                    </td>*@
-                <td>
-                    @Html.DisplayFor(modelItem => item.Device.Brand)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Device.Name)
-                </td>
-                @*<td>
-                        @Html.DisplayFor(modelItem => item.Employee.ApplicationId)
-                    </td>*@
-                <td>
-                    @Html.DisplayFor(modelItem => item.MessageSent)
-                </td>
-                @*<td>
-                        @Html.DisplayFor(modelItem => item.MessageReceived)
-                    </td>*@
-                <td>
-                    @Html.DisplayFor(modelItem => item.Subject)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Message)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.isClaimed)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.isCompleted)
-                </td>
-                <td>
-                </td>
-                <td>
-                    <a class="badge" style="color: deepskyblue" @Html.ActionLink("Edit", "Edit", new { id = item.TicketId })></a>
-                    <a class="badge" style="color: deepskyblue" @Html.ActionLink("Details", "Details", new { id = item.TicketId })></a>
-                    <a class="badge" style="color: deepskyblue" @Html.ActionLink("Delete", "Delete", new { id = item.TicketId })></a>
-                </td>
-            </tr>
+<h1 style="color:deepskyblue; text-align:center">List of Tickets</h1>
+<head>
+    <style>
+        .img-container {
+            text-align: center;
+            display: block;
         }
+    </style>
+</head>
+<body>
+    <div class="jumbotron" style="text-align:center">
+        <span class="img-container">
+            <img src="~/Content/Image/nhn3.png" alt="Neighborhood Nerd Logo">
+        </span>
+        <div class="container-fluid">
+            <table class="table">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Device.Brand)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Device.Name)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.MessageSent)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Subject)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Message)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.isClaimed)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.isCompleted)
+                    </th>
+                </tr>
 
-    </table>
-</div>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Device.Brand)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Device.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.MessageSent)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Subject)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Message)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.isClaimed)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.isCompleted)
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                            <a class="badge" style="color: deepskyblue" @Html.ActionLink("Edit", "Edit", new { id = item.TicketId })></a>
+                            <a class="badge" style="color: deepskyblue" @Html.ActionLink("Details", "Details", new { id = item.TicketId })></a>
+                            <a class="badge" style="color: deepskyblue" @Html.ActionLink("Delete", "Delete", new { id = item.TicketId })></a>
+                        </td>
+                    </tr>
+                }
+
+            </table>
+        </div>
+    </div>
+</body>
