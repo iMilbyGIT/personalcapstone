@@ -122,7 +122,7 @@ namespace AdamPersonalCapstone.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "TicketId,EmployeeId,CustomerId,DeviceId,MessageSent,MessageReceived,Subject,Message")] Ticket ticket)
+        public ActionResult Edit(/*[Bind(Include = "TicketId,EmployeeId,CustomerId,DeviceId,MessageSent,MessageReceived,Subject,Message")]*/ Ticket ticket)
         {
             if (ModelState.IsValid)
             {

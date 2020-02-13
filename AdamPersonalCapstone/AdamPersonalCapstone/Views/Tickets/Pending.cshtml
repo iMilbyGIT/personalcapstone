@@ -16,9 +16,6 @@
 </head>
 <body>
     <div class="jumbotron" style="text-align:center">
-        @*<span class="img-container">
-            <img src="~/Content/Image/nhn3.png" alt="Neighborhood Nerd Logo">
-        </span>*@
         <div class="container-fluid">
             <table class="table">
                 <tr>
@@ -26,7 +23,7 @@
                         @Html.DisplayNameFor(model => model.EmployeeId)
                     </th>
                     <th>
-                        @Html.DisplayNameFor(model => model.CustomerId)
+                        @Html.DisplayNameFor(model => model.Customer.FirstName)
                     </th>
                     <th>
                         @Html.DisplayNameFor(model => model.DeviceId)
@@ -56,7 +53,7 @@
                             @Html.DisplayFor(modelItem => item.EmployeeId)
                         </td>
                         <td>
-                            @Html.DisplayFor(modelItem => item.CustomerId)
+                            @Html.DisplayFor(modelItem => item.Customer.FirstName)
                         </td>
                         <td>
                             @Html.DisplayFor(modelItem => item.DeviceId)
